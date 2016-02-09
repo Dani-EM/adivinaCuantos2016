@@ -550,6 +550,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .portfolio_single_content img{
 	width: 100%;
+        height: 500px;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -597,6 +598,17 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	opacity:1;
 }
 .portfolio_single_content div a{
+	color: #FFFFFF;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	/*margin-top: 40%;*/
+	padding-bottom: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.portfolio_single_content div p.tituloPelicula{
 	color: #FFFFFF;
 	display: block;
 	font-size: 18px;
@@ -1141,3 +1153,13 @@ p.subtitle {
 	transform: rotate(-45deg);
 }
 /* ===== End buttons ===== */
+
+
+.descripcion {text-align:left;margin-left:30px; color:black;font-size: 1.1vw;line-height: 1;margin-bottom: 7px !important;}
+.nombre {background: #72A603;position:absolute;bottom: 0;width: 100%;z-index: 6;height: 41px;text-align: center;
+		font-weight: bold;opacity:1;padding-top: 10px;color:white;}
+span[id*="lblDescNombre"] {font-weight:bold;}
+
+.enlace-pelicula:hover{ cursor: pointer;}
+
+#imgCargando { height: 300px; padding-top: 100px;}
