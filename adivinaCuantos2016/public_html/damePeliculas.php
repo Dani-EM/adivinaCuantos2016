@@ -140,7 +140,7 @@
                 $id =  fgets($file);
                 $retorno.='<div class="col-xs-12 col-sm-4 div-pelicula">';
                 $retorno.='<div class="portfolio_single_content no_image">';
-                $retorno.='<img src=""/>';
+                $retorno.='<img src="img/no-image.jpg"/>';
               /*  $retorno.='<p class="nombre">';
                 $retorno.=$movie->getTitle();
                 $retorno.='</p>';*/
