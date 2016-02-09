@@ -1,10 +1,5 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 $(document).ready(function(){
+    $("#enlacePrev").addClass("hidden");
     $("#imgCargando").removeClass("hidden");
     $('#titulo-seccion-nominados').text('MEJOR PELÍCULA');
      $.ajax({
@@ -40,9 +35,14 @@ function cargaPeliculas(siguienteSeccion){
                         $("#imgCargando").addClass("hidden");
 			$("#portfolio").html(data);
                         $('#lblSeccion').text(idSeccion);
-                        switch(idSeccion) {
+                        
+                        $("#enlacePrev").removeClass("hidden");
+                        $("#enlaceNext").removeClass("hidden");
+
+                    switch(idSeccion) {
                             case 1:
                                 $('#titulo-seccion-nominados').text('MEJOR PELÍCULA');
+                                $("#enlacePrev").addClass("hidden");
                                 break;
                             case 2:
                                 $('#titulo-seccion-nominados').text('MEJOR DIRECTOR');
@@ -115,9 +115,9 @@ function cargaPeliculas(siguienteSeccion){
                                 break;
                             default:
                                 $('#titulo-seccion-nominados').text('MEJOR PELÍCULA');
+                                $("#enlaceNext").addClass("hidden");
                                 break;
                         }
                }
 	});
 }
-

@@ -107,33 +107,51 @@
     while(!feof($file))
     {
         $id =  fgets($file);
-        $id = preg_replace("[\n|\r|\n\r]", '', $id );  
+        $id = preg_replace("[\n|\r|\n\r]", '', $id );
+        $id = trim($id);
 
         if($id != ''){
-           $movie = $tmdb->getMovie($id);
-           /*
-            echo 'Now the <b>$movie</b> var got all the data, check the <a href="http://code.octal.es/php/tmdb-api/class-Movie.html">documentation</a> for the complete list of methods.<br><br>';
+            if($id != '-'){
+                $movie = $tmdb->getMovie($id);
+                /*
+                 echo 'Now the <b>$movie</b> var got all the data, check the <a href="http://code.octal.es/php/tmdb-api/class-Movie.html">documentation</a> for the complete list of methods.<br><br>';
 
-            echo '<b>'. $movie->getTitle() .'</b><ul>';
-            echo '  <li>ID:'. $movie->getID() .'</li>';
-            echo '  <li>Tagline:'. $movie->getTagline() .'</li>';
-            echo '  <li>Trailer: <a href="https://www.youtube.com/watch?v='. $movie->getTrailer() .'">link</a></li>';
-            echo '</ul>...';
-            echo '<img src="'. $tmdb->getImageURL('w185') . $movie->getPoster() .'"/></li>';*/
-           
-           $retorno.='<div class="col-xs-12 col-sm-4 div-pelicula">';
-           $retorno.='<div class="portfolio_single_content">';
-           $retorno.='<img src="'. $tmdb->getImageURL('w500') . $movie->getPoster() .'"/>';
-         /*  $retorno.='<p class="nombre">';
-           $retorno.=$movie->getTitle();
-           $retorno.='</p>';*/
-           $retorno.='<div class="text-center">';
-           $retorno.='<p class="tituloPelicula">'.$movie->getTitle().'</p>';
-           //$retorno.='<a href="https://www.youtube.com/watch?v='. $movie->getTrailer() .'" target="_blank"><i class="fa fa-2x fa-youtube-play"></i></a>';
-           //$retorno.='<span>Pete Docter y Ronnie Del Carmen</span>';
-           $retorno.='</div>';
-           $retorno.='</div>';
-           $retorno.='</div>';
+                 echo '<b>'. $movie->getTitle() .'</b><ul>';
+                 echo '  <li>ID:'. $movie->getID() .'</li>';
+                 echo '  <li>Tagline:'. $movie->getTagline() .'</li>';
+                 echo '  <li>Trailer: <a href="https://www.youtube.com/watch?v='. $movie->getTrailer() .'">link</a></li>';
+                 echo '</ul>...';
+                 echo '<img src="'. $tmdb->getImageURL('w185') . $movie->getPoster() .'"/></li>';*/
+
+                $retorno.='<div class="col-xs-12 col-sm-4 div-pelicula">';
+                $retorno.='<div class="portfolio_single_content">';
+                $retorno.='<img src="'. $tmdb->getImageURL('w500') . $movie->getPoster() .'"/>';
+              /*  $retorno.='<p class="nombre">';
+                $retorno.=$movie->getTitle();
+                $retorno.='</p>';*/
+                $retorno.='<div class="text-center">';
+                $retorno.='<p class="tituloPelicula">'.$movie->getTitle().'</p>';
+                //$retorno.='<a href="https://www.youtube.com/watch?v='. $movie->getTrailer() .'" target="_blank"><i class="fa fa-2x fa-youtube-play"></i></a>';
+                //$retorno.='<span>Pete Docter y Ronnie Del Carmen</span>';
+                $retorno.='</div>';
+                $retorno.='</div>';
+                $retorno.='</div>';
+            }else{
+                $id =  fgets($file);
+                $retorno.='<div class="col-xs-12 col-sm-4 div-pelicula">';
+                $retorno.='<div class="portfolio_single_content no_image">';
+                $retorno.='<img src=""/>';
+              /*  $retorno.='<p class="nombre">';
+                $retorno.=$movie->getTitle();
+                $retorno.='</p>';*/
+                $retorno.='<div class="text-center">';
+                $retorno.='<p class="tituloPelicula">'.$id.'</p>';
+                //$retorno.='<a href="https://www.youtube.com/watch?v='. $movie->getTrailer() .'" target="_blank"><i class="fa fa-2x fa-youtube-play"></i></a>';
+                //$retorno.='<span>Pete Docter y Ronnie Del Carmen</span>';
+                $retorno.='</div>';
+                $retorno.='</div>';
+                $retorno.='</div>';
+            }
         }
 
     }
