@@ -74,7 +74,7 @@
 		
                 public function graba($con){
                      mysqli_query($con,"INSERT INTO usuarios (nick, email, password, haPagado) 
-                    VALUES ('".$this->nick."', '".$this->email."','".$this->password."',".$this->haPagado.")");
+                    VALUES ('".$this->nick."', '".$this->email."','".$this->password."',".($this->haPagado?1:0).")");
 
                 }
 
