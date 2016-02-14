@@ -162,14 +162,14 @@
 		height: 3px;
 	}
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #FFF !important;
+		background-color: #FFEAB5 !important;
 	}
-	.navbar-transparent .navbar-toggle .icon-bar {
-		background-color: #FFF !important;
-	}
-	.navbar-inverse .navbar-toggle .icon-bar {
-		background-color: #FFF !important;
-	}
+        .navbar-transparent .navbar-toggle .icon-bar {
+                background-color: #FFEAB5 !important;
+            }
+            .navbar-inverse .navbar-toggle .icon-bar {
+                background-color: #FFEAB5 !important;
+            }
 
 	/* Navbar collapse / links */
 	.navbar-collapse {
