@@ -124,25 +124,25 @@ a, a:hover, a:focus {
 
 /* === Text Carousel === */
 #text-carousel-intro-section {
-	background-color: #25282a;
+	background-color: #25282a; /* original #25282a*/
 }
 
 
 
 /* === Rotate Box === */
 .rotate-box-1.square-icon .rotate-box-icon, .rotate-box-2.square-icon .rotate-box-icon {
-	background-color: #F26B1D;
+	background-color: #AB2848; /* original #F26B1D*/
 }
 
 
 
 /* === Progress Bar === */
 .progress {
-	border: 3px solid #F26B1D;
+	border: 3px solid #AB2848; /* original #F26B1D*/
 	background-color: transparent;
 }
 .progress-bar {
-	background-color: #F28F38;
+	background-color: #AB2848; /* original #F28F38*/
 }
 
 
@@ -269,6 +269,48 @@ a, a:hover, a:focus {
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav > li.active > a {
 	color: #9f3a00;
 }
-
-
 }
+
+
+
+.list-group-horizontal .list-group-item {
+        display: inline-block;
+        margin-bottom: 0;
+	margin-left:-4px;
+	margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+	border-top-right-radius:0;
+	border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+	border-top-right-radius:4px;
+	border-bottom-left-radius:0;
+} /* ==== PANELES OPCIONES 10 o 5 puntos ==== */
+
+
+#wrap {
+    padding:2em;
+}
+.panel.panel-horizontal {
+    display:table;
+    width:100%;
+}
+.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-body, .panel.panel-horizontal > .panel-footer {
+    display:table-cell;
+}
+.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-footer {
+    width: 25%;
+    border:0;
+    vertical-align: middle;
+}
+.panel.panel-horizontal > .panel-heading {
+    border-right: 1px solid #ddd;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+}
+.panel.panel-horizontal > .panel-footer {
+    border-left: 1px solid #ddd;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 4px;
+} /* ==== FICHAS PANEL HORIZONTAL VOTACIONES ==== */

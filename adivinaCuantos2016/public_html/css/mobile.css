@@ -6,7 +6,7 @@
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
-    
+        
 }
 
 /* Extra Small Devices, Phones */ 
@@ -138,6 +138,10 @@
 	.counter-up .fact-inner .fa-3x {
 		font-size: 36px;
 	}
+        
+        #comienzos {
+        width: 550px;
+        }
 
 }
 
@@ -260,6 +264,9 @@
 	.owl-next {
 		display: none !important;
 	}
+    #comienzos {
+        width: 450px;
+    }
 
 }
 
@@ -270,10 +277,23 @@
 	 #team-section .col-md-2 {
         width: 100%;
     }
+    #chequeSlider {
+        width: 150px;
+        height: auto;
+    }
+    #comienzos {
+        width: 300px;
+    }
 
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
-    
+    #chequeSlider {
+        width: 100px;
+        height: auto;
+    }
+    #comienzos {
+        width: 250px;
+    }
 }

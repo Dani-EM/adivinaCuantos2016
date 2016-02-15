@@ -51,9 +51,10 @@ body {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	margin-bottom: 10px;
+        text-shadow: 1px 1px 2px grey;
 }
 h1 {
 	font-size: 36px;
@@ -71,10 +72,14 @@ h5 {
 	font-size: 18px;
 }
 p {
-	font: 14px/1.5em "Roboto";
+	font: 14px/1.5em "Roboto Slab";
 }
+.sombra-titulos{
+    text-shadow: 1px 2px black;
+}
+
 .navbar-nav > li > a {
-	font-family: "Lato", Helvetica, Arial, sans-serif;
+	font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
 }
 /* End Fonts */
 
@@ -93,7 +98,7 @@ section {
 }
 .devider {
 	width: 100%;
-	height: 23px;
+	height: 17px;
 	background: url('../img/devider.png') no-repeat center center;
 	margin: 5px 0 10px;
 }
@@ -127,10 +132,10 @@ section {
 
 
 /* ===== Begin text colors ===== */
-.text-main { color: #363940; } /* Theme main color */
-.text-white { color: #FFF; }
-.text-off-white { color: #e7e7e7;}
-.text-dark { color: #000; }
+.text-main { color: #525156; } /* Theme main color: #363940 */
+.text-white { color: #FFEAB5; } /* Theme main color: #FFF */
+.text-off-white { color: #e7e7e7;} /* Theme main color: #e7e7e7 */
+.text-dark { color: #AB2848; }
 
 
 /* ===== Begin navbar ===== */
@@ -153,8 +158,9 @@ section {
 .navbar-brand {
 	background-repeat: no-repeat;
 	background-position: left center;
-	width: 150px;
+	width: 200px;
 	height: auto;
+        margin-top: 5px;
 	padding: 24px 0;
 	text-indent: -99999px;
 	font-size: 24px;
@@ -309,7 +315,7 @@ section {
 }
 a.rotate-box-1, a.rotate-box-2 {
 	text-decoration: none;
-	color: #363940;
+	color: #525156; /* original #363940*/
 }
 a.rotate-box-1:hover, a.rotate-box-2:hover {
 	color: #676D75;
@@ -331,7 +337,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	width: 45px;
 	height: 45px;
 	line-height: 45px;
-	color: #FFF !important;
+	color: #FFEAB5 !important;
 	font-size: 18px;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -345,7 +351,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	right: 3px;
 	bottom: 3px;
 	left: 3px;
-	border: 2px solid #FFF;
+	border: 2px solid #FFEAB5;
 }
 .rotate-box-1:hover.square-icon .rotate-box-icon , .rotate-box-2:hover.square-icon .rotate-box-icon{
 	-webkit-transform: rotate(0deg);
@@ -531,6 +537,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
     text-transform: uppercase;
 }
 .portfolio_content{}
+
 .portfolio_single_content{
 	position: relative;
 	top: 0;
@@ -839,7 +846,7 @@ ul.social-list li a i {
 	font-weight: 400;
 }
 #contact-section .cover {
-	background-color: rgba(5, 8, 11, 0.93);
+	background-color: rgba(102, 102, 102, 0.7);
 }
 #contact-section .contact .contact-form {
 	margin-bottom: 40px;
@@ -964,7 +971,7 @@ ul.imp-links li a {
 	text-transform: uppercase;
 }
 p.subtitle {
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	margin-top: 10px;
 }
 /* ===== End page header ===== */
@@ -1162,4 +1169,22 @@ span[id*="lblDescNombre"] {font-weight:bold;}
 
 .enlace-pelicula:hover{ cursor: pointer;}
 
-#imgCargando { height: 300px; padding-top: 100px;}
+#imgCargando { height: 100%; padding-top: 100px;}
+
+#chequeSlider {
+    -ms-transform: rotate(2deg); /* IE 9 */
+    -webkit-transform: rotate(2deg); /* Chrome, Safari, Opera */
+    transform: rotate(2deg);
+    width: 350px;
+    height: auto;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+#comienzos {
+    -ms-transform: rotate(2deg); /* IE 9 */
+    -webkit-transform: rotate(2deg); /* Chrome, Safari, Opera */
+    transform: rotate(2deg);
+    width: 700px;
+    height: auto;
+    box-shadow: 0px 0px 30px #fff;
+}
