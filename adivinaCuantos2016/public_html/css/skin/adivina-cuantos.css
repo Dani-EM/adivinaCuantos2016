@@ -271,46 +271,16 @@ a, a:hover, a:focus {
 }
 }
 
-
-
-.list-group-horizontal .list-group-item {
-        display: inline-block;
-        margin-bottom: 0;
-	margin-left:-4px;
-	margin-right: 0;
-}
-.list-group-horizontal .list-group-item:first-child {
-	border-top-right-radius:0;
-	border-bottom-left-radius:4px;
-}
-.list-group-horizontal .list-group-item:last-child {
-	border-top-right-radius:4px;
-	border-bottom-left-radius:0;
-} /* ==== PANELES OPCIONES 10 o 5 puntos ==== */
-
-
-#wrap {
-    padding:2em;
-}
-.panel.panel-horizontal {
-    display:table;
-    width:100%;
-}
-.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-body, .panel.panel-horizontal > .panel-footer {
-    display:table-cell;
-}
-.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-footer {
-    width: 25%;
-    border:0;
-    vertical-align: middle;
-}
-.panel.panel-horizontal > .panel-heading {
-    border-right: 1px solid #ddd;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
-}
-.panel.panel-horizontal > .panel-footer {
-    border-left: 1px solid #ddd;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 4px;
-} /* ==== FICHAS PANEL HORIZONTAL VOTACIONES ==== */
+.body { padding-top:30px; }
+.widget .panel-body { padding:0px; }
+.widget .list-group { margin-bottom: 0; }
+.widget .panel-title { display:inline }
+.widget .label-info { float: right; }
+.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
+.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
+.widget .mic-info { color: #666666;font-size: 11px; }
+.widget .action { margin-top:5px; }
+.widget .comment-text { font-size: 12px; }
+.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px;}
+.widget .panel-heading { background-color: #AB2848; color: #FFEAB5;}
+/* ==== FICHA PANEL UNIFICADO ==== */
