@@ -1,4 +1,4 @@
-<?php namespace negocio;
+<?php
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -7,47 +7,56 @@
  */
 
 /**
- * Description of CCategoria
+ * Description of CEdicion_Evento
  *
  * @author descoriza
  */
-class CCategoria {
+class CEdicion_Evento {
     /*--------------------------*/
     /* Propiedades Privadas 	*/
     /*--------------------------*/
-    private $idCategoria;
+    private $idEdicionEvento;
     private $descripcion;
-    private $tipoCategoria;
+    private $anyo;
+    private $nEvento;
     /*----------------*/
 
     /*--------------------------*/
     /* Propiedades Públicas 	*/
     /*--------------------------*/
-    public function setIdCategoria($value)
+    public function setIdEdicionEvento($value)
     {
-            $this->idCategoria = $value;
+            $this->idEdicionEvento = $value;
     }
     public function setDescripcion($value)
     {
             $this->descripcion = $value;
     }
-    public function setTipoCategoria($value)
+    public function setAnyo($value)
     {
-            $this->tipoCategoria = $value;
+            $this->anyo = $value;
+    }
+    public function setNEvento($value)
+    {
+            $this->nEvento = $value;
     }
    
     /*---------------*/
-    public function getIdCategoria()
+    public function getIdEdicionEvento()
     {
-            return $this->idCategoria;
+            return $this->idEdicionEvento;
     }
     public function getDescripcion()
     {
             return $this->descripcion;
     }
-    public function getTipoCategoria()
+    public function getAnyo()
     {
-            return $this->tipoCategoria;
+            return $this->anyo;
+    }
+    public function getNEvento()
+    {
+            return $this->nEvento;
     }
     
     /*----------------*/
@@ -57,7 +66,7 @@ class CCategoria {
     /*--------------------------*/
      public function __construct()
     {
-        $this->idCategoria = 0;
+        $this->idEdicionEvento = 0;
     }
 
     /*----------------*/
@@ -68,8 +77,8 @@ class CCategoria {
 
     public function graba($con){
 
-        if (($stmt = $con->prepare("INSERT INTO categorias (descripcion, tipoCategoria) VALUES (?, ?)"))==true){
-            $stmt->bind_param('si', $this->descripcion, $this->tipoCategoria);
+        if (($stmt = $con->prepare("INSERT INTO ediciones_eventos (descripcion, anyo, nEvento) VALUES (?, ?, ?)"))==true){
+            $stmt->bind_param('sii', $this->descripcion, $this->anyo, $this->nEvento);
             $stmt->execute();
 
             return $stmt->affected_rows;
@@ -87,33 +96,37 @@ class CCategoria {
     /* Métodos Recuperación     */
     /*--------------------------*/
 
-    public static function dameCategorias($con,$idCategoria=NULL,$descripcion=NULL,$tipoCategoria=NULL){
-        $categorias = array();
+    public static function dameEdicionEventos($con,$idEdicionEvento=NULL,$descripcion=NULL,$anyo=NULL,$nEvento=NULL){
+        $eventos = array();
         
-        $sql = "SELECT * FROM categorias WHERE 1=1";
+        $sql = "SELECT * FROM ediciones_eventos WHERE 1=1";
         
-        if ($idCategoria) {
-        $sql .= " AND idCategoria=".$idCategoria;
+        if ($idEdicionEvento) {
+        $sql .= " AND idEdicionEvento=".$idEdicionEvento;
         }
         if ($descripcion) {
             $sql .= " AND descripcion='".$descripcion."'";
         }
-        if ($tipoCategoria) {
-            $sql .= " AND tipoCategoria=".$tipoCategoria;
+        if ($anyo) {
+            $sql .= " AND anyo=".$anyo;
+        }
+        if ($nEvento) {
+            $sql .= " AND nEvento=".$nEvento;
         }
        
         $result = mysqli_query($con, $sql);
         
         while($row = mysqli_fetch_array($result))
         {
-            $categoria = new CCategoria();
-            $categoria->setIdCategoria($row['idCategoria']);
-            $categoria->setDescripcion($row['descripcion']);
-            $categoria->setTipoCategoria($row['tipoCategoria']);
-            array_push($categorias, $categoria);
+            $evento = new CEdicionEvento();
+            $evento->setIdEdicionEvento($row['idEdicionEvento']);
+            $evento->setIdTmdb($row['descripcion']);
+            $evento->setTituloEdicionEvento($row['anyo']);
+            $evento->setNEvento($row['nEvento']);
+            array_push($eventos, $evento);
         }
          
-         return $categorias;
+         return $eventos;
 
     }
 

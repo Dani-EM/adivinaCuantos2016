@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of CVotacion
+ * Description of CPuntuacion
  *
  * @author descoriza
  */
@@ -17,9 +17,8 @@ class CVotacion {
     /*--------------------------*/
     private $idVotacion;
     private $idUsuario;
-    private $idPelicula;
-    private $votacion;
-    private $nEdicionOscar;
+    private $idNominacion;
+    private $puntuacion;
     /*----------------*/
 
     /*--------------------------*/
@@ -33,39 +32,31 @@ class CVotacion {
     {
             $this->idUsuario = $value;
     }
-    public function setIdPelicula($value)
+    public function setIdNominacion($value)
     {
-            $this->idPelicula = $value;
+            $this->idNominacion = $value;
     }
-    public function setVotacion($value)
+    public function setPuntuacion($value)
     {
-            $this->votacion = $value;
-    }
-    public function setNEdicionOscar($value)
-    {
-            $this->nEdicionOscar = $value;
+            $this->puntuacion = $value;
     }
    
     /*---------------*/
     public function getIdVotacion()
     {
-            return $this->idVotacion;
+            return $this->idPuntuacion;
     }
     public function getIdUsuario()
     {
             return $this->idUsuario;
     }
-    public function getIdPelicula()
+    public function getIdNominacion()
     {
-            return $this->idPelicula;
+            return $this->idNominacion;
     }
-    public function getVotacion()
+    public function getPuntuacion()
     {
-            return $this->votacion;
-    }
-    public function getNEdicionOscar()
-    {
-            return $this->nEdicionOscar;
+            return $this->puntuacion;
     }
     
     /*----------------*/
@@ -75,7 +66,7 @@ class CVotacion {
     /*--------------------------*/
      public function __construct()
     {
-        $this->idVotacion = 0;
+        $this->idPuntuacion = 0;
     }
 
     /*----------------*/
@@ -86,9 +77,8 @@ class CVotacion {
 
     public function graba($con){
 
-        if (($stmt = $con->prepare("INSERT INTO votacion (idVotacion, idUsuario, idPelicula, votacion,"
-                . " nEdicionOscar) VALUES (?, ?, ?, ?, ?)"))==true){
-            $stmt->bind_param('iiiii', $this->idVotacion, $this->idUsuario, $this->idPelicula, $this->votacion, $this->nEdicionOscar);
+        if (($stmt = $con->prepare("INSERT INTO votaciones (idUsuario, idNominacion, puntuacion) VALUES (?, ?, ?)"))==true){
+            $stmt->bind_param('iii', $this->idUsuario, $this->idNominacion, $this->puntuacion);
             $stmt->execute();
 
             return $stmt->affected_rows;
@@ -107,37 +97,37 @@ class CVotacion {
     /* Métodos Recuperación     */
     /*--------------------------*/
 
-    public static function damePelicula($con,$idPelicula=NULL,$codigo=NULL,$idCategoria=NULL,$nEdicionOscar=NULL){
-        $peliculas = array();
+    public static function dameVotaciones($con,$idVotacion=NULL,$idUsuario=NULL,$idNominacion=NULL,$puntuacion=NULL){
+        $votaciones = array();
         
-        $sql = "SELECT * FROM peliculas WHERE 1=1";
+        $sql = "SELECT * FROM votaciones WHERE 1=1";
         
-        if ($idPelicula) {
-        $sql .= " AND idPelicula=".$idPelicula;
+        if ($idVotacion) {
+            $sql .= " AND idVotacion=".$idVotacion;
         }
-        if ($codigo) {
-            $sql .= " AND codigo='".$codigo."'";
+        if ($idUsuario) {
+            $sql .= " AND idUsuario=".$idUsuario;
         }
-        if ($idCategoria) {
-            $sql .= " AND idCategoria=".$idCategoria;
+        if ($idNominacion) {
+            $sql .= " AND idNominacion=".$idNominacion;
         }
-        if ($nEdicionOscar) {
-            $sql .= " AND nEdicionOscar=".$nEdicionOscar;
+        if ($puntuacion) {
+            $sql .= " AND puntuacion=".$puntuacion;
         }
        
         $result = mysqli_query($con, $sql);
         
         while($row = mysqli_fetch_array($result))
         {
-            $pelicula = new CPelicula();
-            $pelicula->setIdPelicula($row['idPelicula']);
-            $pelicula->setIdCategoria($row['idCategoria']);
-            $pelicula->setCodigo($row['codigo']);
-            $pelicula->setNEdicionOscar($row['nEdicionOscar']);
-            array_push($peliculas, $pelicula);
+            $votacion = new CVotacion();
+            $votacion->setIdVotacion($row['idVotacion']);
+            $votacion->setIdUsuario($row['idUsuario']);
+            $votacion->setIdNominacion($row['idNominacion']);
+            $votacion->setPuntuacion($row['puntuacion']);
+            array_push($votaciones, $votacion);
         }
          
-         return $peliculas;
+         return $votaciones;
 
     }
 

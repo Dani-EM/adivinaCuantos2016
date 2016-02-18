@@ -7,17 +7,17 @@
  */
 
 /**
- * Description of CPelicula
+ * Description of CProfesional
  *
  * @author descoriza
  */
-class CPelicula {
+class CProfesional {
     /*--------------------------*/
     /* Propiedades Privadas 	*/
     /*--------------------------*/
-    private $idPelicula;
-    private $idTmdb; //Id de la API
-    private $tituloPelicula;
+    private $idProfesional;
+    private $idTmdb;
+    private $nombre;
     private $IMDB_ID;
     private $urlImg;
     /*----------------*/
@@ -25,17 +25,17 @@ class CPelicula {
     /*--------------------------*/
     /* Propiedades Públicas 	*/
     /*--------------------------*/
-    public function setIdPelicula($value)
+    public function setIdProfesional($value)
     {
-            $this->idPelicula = $value;
+            $this->idProfesional = $value;
     }
     public function setIdTmdb($value)
     {
             $this->idTmdb = $value;
     }
-    public function setTituloPelicula($value)
+    public function setNombre($value)
     {
-            $this->tituloPelicula = $value;
+            $this->nombre = $value;
     }
     public function setIMDB_ID($value)
     {
@@ -47,17 +47,17 @@ class CPelicula {
     }
    
     /*---------------*/
-    public function getIdPelicula()
+    public function getIdProfesional()
     {
-            return $this->idPelicula;
+            return $this->idProfesional;
     }
     public function getIdTmdb()
     {
             return $this->idTmdb;
     }
-    public function getTituloPelicula()
+    public function getNombre()
     {
-            return $this->tituloPelicula;
+            return $this->nombre;
     }
     public function getIMDB_ID()
     {
@@ -75,7 +75,7 @@ class CPelicula {
     /*--------------------------*/
      public function __construct()
     {
-        $this->idPelicula = 0;
+        $this->idProfesional = 0;
     }
 
     /*----------------*/
@@ -86,8 +86,8 @@ class CPelicula {
 
     public function graba($con){
 
-        if (($stmt = $con->prepare("INSERT INTO peliculas (idTmdb, tituloPelicula, IMDB_ID, urlImg) VALUES (?, ?, ?, ?)"))==true){
-            $stmt->bind_param('ssss', $this->idTmdb, $this->tituloPelicula, $this->IMDB_ID, $this->urlImg);
+        if (($stmt = $con->prepare("INSERT INTO profesionales (idTmdb, nombre, IMDB_ID, urlImg) VALUES (?, ?, ?, ?)"))==true){
+            $stmt->bind_param('ss', $this->idTmdb, $this->nombre, $this->IMDB_ID, $this->urlImg);
             $stmt->execute();
 
             return $stmt->affected_rows;
@@ -96,8 +96,8 @@ class CPelicula {
          /*else{
              die ("Mysql Error: " . $con->error);
              
-         }*/
-       
+         }
+        */
         
     }
 
@@ -105,38 +105,38 @@ class CPelicula {
     /* Métodos Recuperación     */
     /*--------------------------*/
 
-    public static function damePeliculas($con,$idPelicula=NULL,$idTmdb=NULL,$tituloPelicula=NULL,$IMDB_ID=NULL){
-        $peliculas = array();
+    public static function dameProfesionales($con,$idProfesional=NULL,$idTmdb=NULL,$nombre=NULL,$IMDB_ID=NULL){
+        $profesionales = array();
         
-        $sql = "SELECT * FROM peliculas WHERE 1=1";
+        $sql = "SELECT * FROM profesionales WHERE 1=1";
         
-        if ($idPelicula) {
-        $sql .= " AND idPelicula=".$idPelicula;
+        if ($idProfesional) {
+        $sql .= " AND idProfesional=".$idProfesional;
         }
         if ($idTmdb) {
             $sql .= " AND idTmdb='".$idTmdb."'";
         }
-        if ($tituloPelicula) {
-            $sql .= " AND tituloPelicula='".$tituloPelicula."'";
+        if ($nombre) {
+            $sql .= " AND nombre='".$nombre."'";
         }
         if ($IMDB_ID) {
             $sql .= " AND IMDB_ID='".$IMDB_ID."'";
         }
-       
+        
         $result = mysqli_query($con, $sql);
         
         while($row = mysqli_fetch_array($result))
         {
-            $pelicula = new CPelicula();
-            $pelicula->setIdPelicula($row['idPelicula']);
-            $pelicula->setIdTmdb($row['idTmdb']);
-            $pelicula->setTituloPelicula($row['tituloPelicula']);
-            $pelicula->setIMDB_ID($row['IMDB_ID']);
-            $pelicula->setUrlImg($row['urlImg']);
-            array_push($peliculas, $pelicula);
+            $profesional = new CProfesional();
+            $profesional->setIdProfesional($row['idProfesional']);
+            $profesional->setIdTmdb($row['idTmdb']);
+            $profesional->setNombre($row['nombre']);
+            $profesional->setIMDB_ID($row['IMDB_ID']);
+            $profesional->setUrlImg($row['urlImg']);
+            array_push($profesionales, $profesional);
         }
          
-         return $peliculas;
+         return $profesionales;
 
     }
 

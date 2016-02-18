@@ -435,21 +435,7 @@
                                 <!-- End page header-->
                                 <div class="portfolio_content_area" >
                                     <div class="portfolio_menu" id="filters">
-                                        <div class="container">
-                                            <div class="col-xs-3">
-                                                <i class="fa fa-5x fa-caret-left enlace-pelicula" onclick="cargaPeliculas('previous')" id="enlacePrev"></i>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <h2><label id="titulo-seccion-nominados"></label></h2>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <i class="fa fa-5x fa-caret-right enlace-pelicula" onclick="cargaPeliculas('next')" id="enlaceNext"></i>
-                                            </div>
-                                        </div>
-                                        <label class="hidden" id="lblSeccion">1</label>
-                                        <div id="imgCargando" class="container text-center hidden">
-                                            <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto" />
-                                        </div>
+
                                       <!--  <ul>
                                             <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">Todas</a></li>
                                             <li><a href="#porfolio_menu" data-filter=".mejor-pelicula">MEJOR PELÍCULA</a></li>
@@ -480,7 +466,7 @@
                                         </ul> -->
                                     </div>
                                     <div class="portfolio_content">
-                                        <div class="row"  id="portfolio">
+                                        <div class="row">
 					     
                                         </div>
                                     </div>
@@ -900,7 +886,24 @@
                     78</span>
             </div>
             <div class="panel-body">
-                <ul class="list-group">
+                <div class="container">
+                    <div class="col-xs-3">
+                        <i class="fa fa-5x fa-caret-left enlace-pelicula" onclick="cargaPeliculas('previous')" id="enlacePrev"></i>
+                    </div>
+                    <div class="col-xs-6">
+                        <h2><label id="titulo-seccion-nominados"></label></h2>
+                    </div>
+                    <div class="col-xs-3">
+                        <i class="fa fa-5x fa-caret-right enlace-pelicula" onclick="cargaPeliculas('next')" id="enlaceNext"></i>
+                    </div>
+                </div>
+                <label class="hidden" id="lblSeccion">1</label>
+                <div id="imgCargando" class="container text-center hidden">
+                    <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto" />
+                </div>
+                <ul class="list-group" id="portfolio">
+                    
+                    <!-- 
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-xs-2 col-md-1">
@@ -1114,7 +1117,7 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
                 <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
             </div>
