@@ -1,8 +1,12 @@
 $(document).ready(function(){
-    $("#enlacePrev").addClass("hidden");
+   inicializaPeliculas();
+});
+
+function inicializaPeliculas(){
+     $("#enlacePrev").addClass("hidden");
     $("#imgCargando").removeClass("hidden");
     $('#titulo-seccion-nominados').text('MEJOR PELÍCULA');
-     $.ajax({
+    $.ajax({
 		type: "POST",
 		url: "damePeliculas.php",
 		data: { "idSeccion" :  1 },
@@ -13,7 +17,10 @@ $(document).ready(function(){
                         $("#imgCargando").addClass("hidden");
 		}
 	});
-});
+    
+    
+}
+
 
 function cargaPeliculas(siguienteSeccion){
     var idSeccion =parseInt($('#lblSeccion').text());
@@ -120,4 +127,26 @@ function cargaPeliculas(siguienteSeccion){
                         }
                }
 	});
+}
+
+
+function validarUsuario(){
+ 
+  $.ajax({
+		type: "POST",
+		url: "validaUsuario.php",
+		data: { "emailUsuario" :  $("#txtEmail").val() , "nickUsuario" : $("#txtNick").val() },
+		success: function(data){
+                       if(data!="0"){
+                            inicializaPeliculas();
+                             $("#txtEmail").val("");
+                             $("#txtNick").val("");
+                            $('#divLogin').modal('hide');
+                        }else{
+                            alert("usuario no encontrado");
+                        }
+                               
+               }
+	});
+
 }

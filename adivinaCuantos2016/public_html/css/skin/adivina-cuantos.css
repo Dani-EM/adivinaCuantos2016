@@ -282,5 +282,5 @@ a, a:hover, a:focus {
 .widget .action { margin-top:5px; }
 .widget .comment-text { font-size: 12px; }
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px;}
-.widget .panel-heading { background-color: #AB2848; color: #FFEAB5;}
+.widget .panel-heading { background-color: #AB2848; color: #FFEAB5;height: 6em;}
 /* ==== FICHA PANEL UNIFICADO ==== */
