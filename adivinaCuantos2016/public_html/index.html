@@ -167,8 +167,8 @@
                 
                 
             <!-- Begin about section -->
-			<section id="about-section" class="page bg-style1">
-                <!-- Begin page header-->
+            <section id="about-section" class="page bg-style1">
+              <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -927,11 +927,40 @@
                 <div id="imgCargando" class="container text-center hidden">
                     <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto" /> 
                 </div>
+                <style>
+                    input[type="radio"]{ display: none; }
+ 
+                    input[type="radio"] + label span{
+                        display: inline-block;
+                        width: 19px;
+                        height: 19px;
+                        //background: url(img/check_radio_sheet.png) left top no-repeat;
+                        margin: -1px 4px 0 0;
+                        vertical-align: middle;
+                        cursor:pointer;
+                    }
+                    
+                    input[type="radio"]:checked + label span{
+                        color:#AB2848;
+                    }
+                    
+                </style>
+                
+               
+                <br />
+                 <input type="radio" id="c2" name="vota-5">
+                    <label for="c2"><span></span> <span class="glyphicon glyphicon-star"></span></label>
+                <br />    
+               
+                <br />
+                <input type="radio" id="c4" name="vota-5">
+                    <label for="c4"><span></span> <span class="glyphicon glyphicon-star"></span></label>
+                <br />
                 <div class="container-fluid">
                     <ul class="list-group" id="portfolio">
 
 
-                  <!--          <li class="list-group-item">
+                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-xs-2 col-md-1">
                                     <img src="https://image.tmdb.org/t/p/w396/mVde2tB9TvR97LO7nferqTQq2nQ.jpg" class="img-circle img-responsive" alt="" /></div>
@@ -948,10 +977,12 @@
                                     </div>
                                     <div class="action text-right">
                                         <button type="button" class="btn btn-success btn" title="Edit">
-                                            10 <span class="glyphicon glyphicon-star"></span>
+                                             <input type="radio" id="vota10-2" name="10">
+                                                <label for="vota10-2"><span style="color:white;">10</span> <span class="glyphicon glyphicon-star"></span></label>
                                         </button>
                                         <button type="button" class="btn btn-success btn" title="Approved">
-                                            5 <span class="glyphicon glyphicon-star"></span>
+                                            <input type="radio" id="vota5-2" name="5">
+                                                <label for="vota5-2"><span style="color:white;">5</span> <span class="glyphicon glyphicon-star"></span></label>
                                         </button>
                                     </div>
                                 </div>
@@ -974,16 +1005,26 @@
                                     </div>
                                     <div class="action text-right">
                                         <button type="button" class="btn btn-success btn" title="Edit">
-                                            10 <span class="glyphicon glyphicon-star"></span>
+                                             <input type="radio" id="vota10-4" name="10">
+                                                <label for="vota10-4"><span style="color:white;">10</span> <span class="glyphicon glyphicon-star"></span></label>
                                         </button>
                                         <button type="button" class="btn btn-success btn" title="Approved">
-                                            5 <span class="glyphicon glyphicon-star"></span>
+                                            <input type="radio" id="vota5-4" name="5">
+                                                <label for="vota5-4"><span style="color:white;">5</span> <span class="glyphicon glyphicon-star"></span></label>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </li>                    
-                         <li class="list-group-item">
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-success btn" title="Edit" onclick="vota()">
+                                
+                            vota
+                            </button>
+                            
+                            
+                        </li>
+          <!--                  <li class="list-group-item">
                             <div class="row">
                                 <div class="col-xs-2 col-md-1">
                                     <img src="https://image.tmdb.org/t/p/w396/mVde2tB9TvR97LO7nferqTQq2nQ.jpg" class="img-circle img-responsive" alt="" /></div>

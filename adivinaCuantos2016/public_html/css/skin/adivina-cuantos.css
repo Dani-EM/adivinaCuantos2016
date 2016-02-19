@@ -284,3 +284,21 @@ a, a:hover, a:focus {
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px;}
 .widget .panel-heading { background-color: #AB2848; color: #FFEAB5;height: 6em;}
 /* ==== FICHA PANEL UNIFICADO ==== */
+
+
+
+input[type="radio"]{ display: none; }
+ 
+                    input[type="radio"] + label span{
+                        display: inline-block;
+                        width: 19px;
+                        height: 19px;
+                        //background: url(img/check_radio_sheet.png) left top no-repeat;
+                        margin: -1px 4px 0 0;
+                        vertical-align: middle;
+                        cursor:pointer;
+                    }
+                    
+                    input[type="radio"]:checked + label span{
+                        color:#AB2848;
+                    }

@@ -209,10 +209,12 @@ if($_SESSION["usuario"]==""){
                             </div>
                             <div class="action text-right">
                                     <button type="button" class="btn btn-success btn" title="Edit">
-                                            10 <span class="glyphicon glyphicon-star"></span>
+                                            <input type="radio" id="c3" name="vota-10">
+                                                <label for="c3"><span style="color:white;">10</span> <span class="glyphicon glyphicon-star"></span></label>
                                     </button>
                                     <button type="button" class="btn btn-success btn" title="Approved">
-                                            5 <span class="glyphicon glyphicon-star"></span>
+                                            <input type="radio" id="c3" name="vota-5">
+                                                <label for="c3"><span style="color:white;">10</span> <span class="glyphicon glyphicon-star"></span></label>
                                     </button>
                             </div>
                     </div>
@@ -221,7 +223,7 @@ if($_SESSION["usuario"]==""){
 
         */
 
-
+        
        foreach($nominaciones as $nominacion){
            $retorno.='<li class="list-group-item">';
            $retorno.='<div class="row">';
@@ -267,17 +269,17 @@ if($_SESSION["usuario"]==""){
            $retorno.='</div>';
            $retorno.='<div class="action text-right">';
            $retorno.='<button type="button" class="btn btn-success btn btnVotacion" title="Edit">';
-           $retorno.='10 <span class="glyphicon glyphicon-star"></span>';
+           $retorno.='<input type="radio" id="vota10-'.$nominacion->getIdNominacion().'" name="vota-10">';
+           $retorno.='<label for="vota10-'.$nominacion->getIdNominacion().'"><span style="color:white;">10</span> <span class="glyphicon glyphicon-star"></span></label>';
            $retorno.='</button>';
            $retorno.='<button type="button" class="btn btn-success btn btnVotacion" title="Approved">';
-           $retorno.='5 <span class="glyphicon glyphicon-star"></span>';
+           $retorno.='<input type="radio" id="vota5-'.$nominacion->getIdNominacion().'" name="vota-5">';
+           $retorno.='<label for="vota5-'.$nominacion->getIdNominacion().'"><span style="color:white;">5</span> <span class="glyphicon glyphicon-star"></span></label>';
            $retorno.='</button>';
            $retorno.='</div>';
            $retorno.='</div>';
            $retorno.='</div>';
            $retorno.='</li>';
-
-
 
 
 
@@ -290,7 +292,21 @@ if($_SESSION["usuario"]==""){
                    echo '</ul>';
                    echo '<img src="'. $nominacion->getPelicula()->getUrlImg().'"/>'; */
        }
+    /*<div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                      </div>
+                                    </div>*/
 
+
+           $porcentaje = 4 * $idCategoria;
+           
+           $retorno.='<li>';
+           $retorno.='<div class="extra-space-l"></div>';
+           $retorno.='<div class="progress">';
+           $retorno.='<div class="progress-bar" role="progressbar" aria-valuenow="'.$porcentaje.'" aria-valuemin="0" aria-valuemax="100" style="width: '.$porcentaje.'%;">';
+           $retorno.='</div>';
+           $retorno.='</div>';
+           $retorno.='</li>';
 
     }
 }

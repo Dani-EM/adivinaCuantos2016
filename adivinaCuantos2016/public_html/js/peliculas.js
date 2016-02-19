@@ -130,6 +130,17 @@ function cargaPeliculas(siguienteSeccion){
 }
 
 
+function vota(){
+    $("#portfolio input").each(function () 
+        { 
+            var myId = $(this).attr("id");
+            alert(myId);
+            if( $(this).prop('checked') ) {
+                alert('Seleccionado');
+            }
+        }); 
+}
+
 function validarUsuario(){
  
   $.ajax({
