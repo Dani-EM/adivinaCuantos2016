@@ -141,8 +141,8 @@
                 
                 
             <!-- Begin about section -->
-			<section id="about-section" class="page bg-style1">
-                <!-- Begin page header-->
+            <section id="about-section" class="page bg-style1">
+              <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -481,7 +481,7 @@
                                         </ul> 
                                     </div>
                                     <div class="portfolio_content">
-                                        <div class="row"  id="portfolio">
+                                        <div class="row">
 					     
                                         </div>
                                     </div>
@@ -894,6 +894,20 @@
             <!-- Begin contact section -->
         <section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/map-bg.png); background-repeat: repeat; background-size: 10%;">
             <div class="cover"></div>
+            <div class="panel-heading">
+                <div class="col-xs-3">
+                    <i class="fa fa-5x fa-caret-left enlace-pelicula" onclick="cargaPeliculas('previous')" id="enlacePrev"></i>
+                </div>
+                 <div class="col-xs-6">
+                    <h3 class="panel-title">
+                        <label id="titulo-seccion-nominados">MEJOR DIRECTOR</label>
+                    </h3>
+                 </div>
+                <div class="col-xs-3">
+                    <i class="fa fa-5x fa-caret-right enlace-pelicula" onclick="cargaPeliculas('next')" id="enlaceNext"></i>
+                </div>
+            </div>
+            
                  <!-- Begin page header-->
 <!--                <div class="page-header-wrapper">
                     <div class="container">
@@ -904,22 +918,26 @@
                 </div>-->
                 <!-- End page header-->
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+    <label class="hidden" id="lblSeccion">1</label>
+    <div id="imgCargando" class="container text-center hidden">
+                    <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto"> 
+    </div>
+    <div class="row" id="textoFichas">
+<!--        <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Pelicula</h4>
                                     <p>Dirigida por: </p>
                                     <p>Profesional que interviene</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -931,27 +949,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Profesional</h4>
                                     <p>Nominado por su trabajo en: </p>
                                     <p>Película en que trabaja</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -963,27 +981,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Pelicula</h4>
                                     <p>Dirigida por: </p>
                                     <p>Profesional que interviene</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -995,27 +1013,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Profesional</h4>
                                     <p>Nominado por su trabajo en: </p>
                                     <p>Película en que trabaja</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -1027,27 +1045,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Pelicula</h4>
                                     <p>Dirigida por: </p>
                                     <p>Profesional que interviene</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -1059,27 +1077,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Profesional</h4>
                                     <p>Nominado por su trabajo en: </p>
                                     <p>Película en que trabaja</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -1091,27 +1109,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Pelicula</h4>
                                     <p>Dirigida por: </p>
                                     <p>Profesional que interviene</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -1123,27 +1141,27 @@
                                 <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default">
-    <!--            <div class="shape">
+                <div class="shape">
                     <div class="shape-text">
                     top
                     </div>
-                </div>-->
-                        <div class="row" id="textoFichas">
+                </div>
+                        <div class="row">
                             <div class="col-xs-8 col-md-8 text-right">
                                 <div>
                                     <div class="extra-space-m"></div>
                                     <h4>Nombre Profesional</h4>
                                     <p>Nominado por su trabajo en: </p>
                                     <p>Película en que trabaja</p>
-<!--                                    <div class="devider"></div>-->
+                                    <div class="devider"></div>
                                     <p style="margin-top: 4px;">
                                         <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
                                         <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
@@ -1155,12 +1173,12 @@
                                 <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
                             </div>
                         </div>
-<!--                <div class="offer-content">
+                <div class="offer-content">
                     <h3 class="lead">A default offer</h3>
                     <p>And a little description.</p>
-                </div>-->
+                </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div> <!-- FICHAS RECOLOCADAS RESPONSIVE-->
 
@@ -1284,7 +1302,7 @@
                                         </div> /.row
                                     </div> /.container
                                 </div> -->
-            </section>
+            <!--</section>-->
             <!-- End contact section -->
                 
                 
@@ -1446,9 +1464,9 @@
                     <div class="card card-container text-center">
                             <img id="logo-img" class="logo-img hidden-xs hidden-sm" src="img/logo_redes.png" />
                             <form class="form-signin">
-                                <input type="text" id="inputEmail" class="form-control" placeholder="Nick o alias" required autofocus>
+                                <input type="text" id="inputNick" class="form-control" placeholder="Nick o alias" required autofocus>
                                 <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
-                                <button class="btn btn-primary btn-blank" type="submit"><span class="fa fa-key"></span>&nbsp;&nbsp;Entrar</button>
+                                <button onclick="validarUsuario()" class="btn btn-primary btn-blank" type="submit"><span class="fa fa-key"></span>&nbsp;&nbsp;Entrar</button>
                             </form><!-- /form -->
                             <div class="signin-help">
                                 <p><a href="mailto:adivinacuantos@gmail.com?Subject=Tengo%20un%20problemilla...%20Échame%20una%20mano!" target="_top">Problemas?</a></p>

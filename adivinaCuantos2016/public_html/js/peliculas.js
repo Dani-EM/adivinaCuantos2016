@@ -1,8 +1,12 @@
 $(document).ready(function(){
-    $("#enlacePrev").addClass("hidden");
+   inicializaPeliculas();
+});
+
+function inicializaPeliculas(){
+     $("#enlacePrev").addClass("hidden");
     $("#imgCargando").removeClass("hidden");
     $('#titulo-seccion-nominados').text('MEJOR PELÍCULA');
-     $.ajax({
+    $.ajax({
 		type: "POST",
 		url: "damePeliculas.php",
 		data: { "idSeccion" :  1 },
@@ -13,7 +17,10 @@ $(document).ready(function(){
                         $("#imgCargando").addClass("hidden");
 		}
 	});
-});
+    
+    
+}
+
 
 function cargaPeliculas(siguienteSeccion){
     var idSeccion =parseInt($('#lblSeccion').text());
@@ -26,14 +33,14 @@ function cargaPeliculas(siguienteSeccion){
             break;
     }
     $("#imgCargando").removeClass("hidden");
-    $("#portfolio").html('');
+    $("#textoFichas").html('');
     $.ajax({
 		type: "POST",
 		url: "damePeliculas.php",
 		data: { "idSeccion" :  idSeccion },
 		success: function(data){
                         $("#imgCargando").addClass("hidden");
-			$("#portfolio").html(data);
+			$("#textoFichas").html(data);
                         $('#lblSeccion').text(idSeccion);
                         
                         $("#enlacePrev").removeClass("hidden");
@@ -118,6 +125,38 @@ function cargaPeliculas(siguienteSeccion){
                                 $("#enlaceNext").addClass("hidden");
                                 break;
                         }
+               }
+	});
+}
+
+
+function vota(){
+    $("#portfolio input").each(function () 
+        { 
+            var myId = $(this).attr("id");
+            alert(myId);
+            if( $(this).prop('checked') ) {
+                alert('Seleccionado');
+            }
+        }); 
+}
+
+function validarUsuario(){
+ 
+  $.ajax({
+		type: "POST",
+		url: "validaUsuario.php",
+		data: { "emailUsuario" :  $("#inputEmail").val() , "nickUsuario" : $("#inputNick").val() },
+		success: function(data){
+                       if(data!="0"){
+                            inicializaPeliculas();
+                             $("#inputEmail").val("");
+                             $("#inputNick").val("");
+                            $('#usuarios').modal('hide');
+                        }else{
+                            alert("Usuario No Encontrado");
+                        }
+                               
                }
 	});
 }

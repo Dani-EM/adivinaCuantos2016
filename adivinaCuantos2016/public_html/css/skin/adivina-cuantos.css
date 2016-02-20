@@ -458,3 +458,19 @@ a, a:hover, a:focus {
 .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
 .bs-wizard > .bs-wizard-step.disabled div.bs-wizard-dot{ pointer-events: none; }
 /* PROGRESS BAR*/
+
+input[type="radio"]{ display: none; }
+ 
+                    input[type="radio"] + label span{
+                        display: inline-block;
+                        width: 19px;
+                        height: 19px;
+                        //background: url(img/check_radio_sheet.png) left top no-repeat;
+                        margin: -1px 4px 0 0;
+                        vertical-align: middle;
+                        cursor:pointer;
+                    }
+                    
+                    input[type="radio"]:checked + label span{
+                        color:#AB2848;
+                    }
