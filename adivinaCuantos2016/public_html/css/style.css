@@ -1052,7 +1052,7 @@ p.subtitle {
 /* ===== End OWL carousel ===== */
 
 
-/* ===== Begin buttons ===== */
+/* ===== Begin buttons ===== 
 .btn {
 	position: relative;
 	letter-spacing: 1.5px;
@@ -1073,8 +1073,8 @@ p.subtitle {
 
 /* Button blank */
 .btn-blank {
-	border: 2px solid #fff;
-	color: #fff;
+	border: 2px solid #AB2848; /*2px solid #fff*/
+	color: #AB2848; /*#fff*/
 	padding: 8px 12px;
 	display: inline-block;
 	vertical-align: middle;
@@ -1089,6 +1089,7 @@ p.subtitle {
 	transition-property: color;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
+        font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 }
 .btn-blank:before {
 	content: "";
@@ -1098,7 +1099,8 @@ p.subtitle {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #fff;
+        color: #AB2848;
+	background: #FFEAB5;
 	-webkit-transform: scaleY(0);
 	transform: scaleY(0);
 	-webkit-transform-origin: 50% 100%;
@@ -1111,11 +1113,12 @@ p.subtitle {
 	transition-timing-function: ease-out;
 }
 .btn-blank:hover, .btn-blank:focus, .btn-blank:active {
-	color: #333;
+	color: #FFEAB5;
 }
 .btn-blank:hover:before, .btn-blank:focus:before, .btn-blank:active:before {
 	-webkit-transform: scaleY(1);
 	transform: scaleY(1);
+        background: #AB2848;
 }
 
 /* Button active */
@@ -1133,6 +1136,7 @@ p.subtitle {
 	font-size: 1.4em;
 	padding: 10px 80px;
 }
+
 
 
 /* Scroll to top button */

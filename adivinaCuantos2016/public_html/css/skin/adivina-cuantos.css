@@ -230,12 +230,14 @@ a, a:hover, a:focus {
 	background: #F28F38;
 }
 .btn-primary, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active {
-	background-color: #3078B3;
-	color: #FFF;
+	background-color: #AB2848; /*#3078B3*/
+	color: #FFEAB5; /*#FFF*/
+        border: 2px solid #FFEAB5;
 }
 .btn-primary:hover {
-	background-color: #1867A8;
-	color: #FFF;
+	background-color: #91223e; /*#1867A8*/
+	color: #FFEAB5; /*#FFF*/
+        border: 2px solid #FFEAB5;
 }
 .btn-danger, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active {
 	background-color: #E7392D;
@@ -284,3 +286,77 @@ a, a:hover, a:focus {
 .widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px;}
 .widget .panel-heading { background-color: #AB2848; color: #FFEAB5;}
 /* ==== FICHA PANEL UNIFICADO ==== */
+
+.modal-dialog {
+    top: 80px;
+}
+
+.modal-content {
+    background-color: #FFEAB5;
+    color: #525156;
+}
+
+.modal-header {
+    background-color: #AB2848;
+    color: #FFEAB5;
+}
+
+#pagos {
+    color: #AB2848;
+    background-color: rgba(171,40,72,0.6);
+}
+/* MODALES*/
+
+
+.card-container.card {
+    padding-top: 0px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.card {
+    //background-color: #F7F7F7;
+    padding: 10px 10px 10px;
+    margin: 0 auto 25px;
+//    -moz-border-radius: 2px;
+//    -webkit-border-radius: 2px;
+//    border-radius: 2px;
+//    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+//    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+//    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: #AB2848;/*rgb(104, 145, 162)*/
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+/*LOGIN*/
