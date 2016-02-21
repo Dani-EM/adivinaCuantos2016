@@ -166,20 +166,49 @@ $retorno = '';
 
 session_start();
 if($_SESSION["usuario"]==""){
-    $retorno = 'Tienes que logarte antes de poder iniciar la votación';
+    $retorno = '<div class="container">
+                                <div class="row">
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-1">
+                                    </div>
+                                    <div class="col-xs-8 text-center">
+                                        <h3>Logueate desde el login del menú superior</h3>
+                                    </div>
+                                    <div class="col-xs-1">
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                            </div>';
     
 }else{
     $idCategoria = $_POST["idSeccion"];
 
+    if($idCategoria==25){
+        $retorno = '<div class="container">
+                                <div class="row">
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-1">
+                                    </div>
+                                    <div class="col-xs-8 text-center">
+                                        <h3>¡¡ENHORABUENA!! Ya tenemos tus votaciones.</h3>
+                                        <h3>¡¡¡¡MUCHA SUERTE!!!!</h3>
+                                    </div>
+                                    <div class="col-xs-1">
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                            </div>';
+        
+    }else{
 
-    include("negocio/CNominacion.php");
-
+        include("negocio/CNominacion.php");
+            
     $host="mysql.hostinger.es";  //mysql.hostinger.es localhost
     $user="u755245033_admin";  //u755245033_admin root
     $password="admin1234"; //admin1234
     $db="u755245033_cine"; //u755245033_cine concurso_cine
     $con=mysqli_connect($host,$user,$password,$db);
-
+        
     // Check connection
     if (mysqli_connect_errno())
     {
@@ -188,9 +217,9 @@ if($_SESSION["usuario"]==""){
     {
         //dameNominaciones($con,$idNominacion=NULL,$idCategoria=NULL,$idPelicula=NULL,$idProfesional=NULL,$idEdicionEvento=NULL){
         $nominaciones = CNominacion::dameNominaciones($con, NULL, $idCategoria, NULL, NULL, NULL);
-
+            
         mysqli_close($con);
-
+            
         /*
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class="offer offer-default">
@@ -224,44 +253,47 @@ if($_SESSION["usuario"]==""){
                         </div>
                 </div>
         </div>
+         * <a onclick="cargaPeliculas(0)" id="enlacePrev"><span class="fa fa-arrow-circle-left fa-3x"></span></a>
         */
-
-        
+            
+            
+        $retorno.='<div class="container">
+                                <div class="row">
+                                    
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-8 text-center">
+                                        <h3><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h3>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
+                                    </div>
+                                    
+                                </div>
+                            </div><div class="container">';
+                                
+                                
+                                
+                                
        foreach($nominaciones as $nominacion){
            $retorno.='<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="offer offer-default">
-<div class="row">
-<div class="col-xs-8 col-md-8 text-right">
-<div>
-<div class="extra-space-m"></div>';
-
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div>';
+    
            switch ($nominacion->getCategoria()->getTipoCategoria()) {
             case 0: //Peliculas
                 
-                $retorno.='<h4>'.$nominacion->getPelicula()->getTituloPelicula().'</h4>
-                                    <p>Dirigida por: </p>
-                                    <p>Profesional que interviene</p>';
+                $retorno.='<h5>'.$nominacion->getPelicula()->getTituloPelicula().'</h5>';
                 break;
             case 1: //Profesionales
-                $retorno.='<img src="'.$nominacion->getProfesional()->getUrlImg().'" class="img-circle img-responsive" alt="" /></div>';
-                $retorno.='<div class="col-xs-10 col-md-11">';
-                $retorno.='<div>';
-                //$retorno.='<a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">';
-                $retorno.='<span class="nombreProfesionalPanel">';
-                $retorno.=$nominacion->getProfesional()->getNombre();
-                $retorno.='</span>';
-                //$retorno.='</a>';
-                $retorno.='<div class="mic-info">';
-                $retorno.='<span class="titPeliculaProfesionalPanel">';
-                $retorno.='En: '.strtoupper($nominacion->getPelicula()->getTituloPelicula());
-                $retorno.='</span>';
-                $retorno.='</div>';
-                $retorno.='</div>';
-                $retorno.='<div class="comment-text">';
-                //$retorno.='Awesome design';             
+                $retorno.='<h5>'.$nominacion->getProfesional()->getNombre().'</h5>';
+                $retorno.='<p><strong>por:</strong>'.$nominacion->getPelicula()->getTituloPelicula().'</p>';
+                    
                 break;
            }
-
+           $retorno.='<div class="devider"></div>';  
            $retorno.='<p style="margin-top: 4px;">
                                        <button type="button" class="btn btn-success">
                                            <input type="radio" id="vota10-'.$nominacion->getIdNominacion().'" name="10">
@@ -280,20 +312,20 @@ if($_SESSION["usuario"]==""){
                                 </div>
                             </div>
                             <div class="col-xs-4 col-md-4">';
-           
+                                
            switch ($nominacion->getCategoria()->getTipoCategoria()) {
             case 0: //Peliculas
                 $retorno.='<img src="'.$nominacion->getPelicula()->getUrlImg().'" class="img img-responsive" /></div>';
                 break;
-
+                    
             case 1: //Profesionales
                 $retorno.='<img src="'.$nominacion->getProfesional()->getUrlImg().'" class="img img-responsive" /></div>';
                 break;
            }
-           
-           $retorno.='</div></div></div></div>';
-
-
+               
+           $retorno.='</div></div></div>';
+               
+               
            //echo $nominacion->getPelicula()->getTituloPelicula()."<br>";
      /*      echo '<b>ID => '. $nominacion->getIdNominacion() .'</b><ul>';
                    echo '  <li>IDCATEGORIA: '. $nominacion->getIdCategoria() .'</li>';
@@ -307,9 +339,9 @@ if($_SESSION["usuario"]==""){
                                       <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
                                       </div>
                                     </div>*/
-
-
-//           $porcentaje = 4 * $idCategoria;
+                                        
+                                        
+           $porcentaje = 4 * $idCategoria;
 //           
 //           $retorno.='<li>';
 //           $retorno.='<div class="extra-space-l"></div>';
@@ -318,8 +350,65 @@ if($_SESSION["usuario"]==""){
 //           $retorno.='</div>';
 //           $retorno.='</div>';
 //           $retorno.='</li>';
-
+    
+        }
     }
+    
+//    <div class="container">
+//    <div class="row bs-wizard" style="border-bottom:0;">
+//        <div class="col-xs-3 bs-wizard-step complete"><!-- Añadir clase complete, active o null-->
+//            <div class="text-center bs-wizard-stepnum"><h6>Las Divertidas!!</h6></div>
+//            <div class="progress"><div class="progress-bar"></div></div>
+//            <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
+//<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+//        </div>
+//        <div class="col-xs-3 bs-wizard-step complete"><!-- Añadir clase complete, active o null-->
+//            <div class="text-center bs-wizard-stepnum"><h6>Menos Populares</h6></div>
+//            <div class="progress"><div class="progress-bar"></div></div>
+//            <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
+//<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+//        </div>
+//        <div class="col-xs-3 bs-wizard-step active"><!-- Añadir clase complete, active o null-->
+//            <div class="text-center bs-wizard-stepnum"><h6>!!!Puro Cinema!!!</h6></div>
+//            <div class="progress"><div class="progress-bar"></div></div>
+//            <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
+//<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+//        </div>        
+//        <div class="col-xs-3 bs-wizard-step"><!-- Añadir clase complete, active o null-->
+//            <div class="text-center bs-wizard-stepnum"><h6>!Y Esto Fue Todo!</h6></div>
+//            <div class="progress"><div class="progress-bar"></div></div>
+//            <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
+//<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+//        </div>        
+//    </div>
+//</div> <!--PROGRESS BAR-->
+    
+    $retorno.='</div><div class="container">
+        <div class="extra-space-m"></div>';
+    if($idCategoria<25){
+    $retorno.='<div class="row bs-wizard" style="border-bottom:0;">
+        <div class="col-xs-3 bs-wizard-step complete">
+            <div class="text-center bs-wizard-stepnum"><h6>Las Divertidas!!</h6></div>
+        </div>
+        <div class="col-xs-3 bs-wizard-step complete">
+            <div class="text-center bs-wizard-stepnum"><h6>Menos Populares</h6></div>
+        </div>
+        <div class="col-xs-3 bs-wizard-step active">
+            <div class="text-center bs-wizard-stepnum"><h6>!!!Puro Cinema!!!</h6></div>
+        </div>        
+        <div class="col-xs-3 bs-wizard-step">
+            <div class="text-center bs-wizard-stepnum"><h6>!Y Esto Fue Todo!</h6></div>
+        </div>        
+    </div>';
+    }
+    $retorno.='<div class="row bs-wizard" style="border-bottom:0;">
+        <div class="col-xs-12 bs-wizard-step complete">
+            <div class="progress" style="left:0; width:100%;"><div class="progress-bar"></div></div>
+            <div class="bs-wizard-dot" style="left:'.$porcentaje.'%"><img src="img/logo_solo.png" class="img-responsive"/></div>
+        </div>
+    </div>
+</div>';  
+    
+    
 }
-$retorno.='<br />'.count($nominaciones);
 echo $retorno;

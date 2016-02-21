@@ -1,8 +1,7 @@
 
 a, a:hover, a:focus {
     /* color: #F28F38; */
-    color: #525156;
-        
+    /* color: #525156; */
 }
 
 /* === Navbar === */
@@ -361,6 +360,12 @@ a, a:hover, a:focus {
 }
 /*LOGIN*/
 
+.botonera {
+    background-clip: #FFEAB5;
+}
+
+/*BOTONERA*/
+
 .shape{	
 	border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
 	-ms-transform:rotate(360deg); /* IE 9 */
@@ -438,13 +443,12 @@ a, a:hover, a:focus {
     color: #525156;    
 } /* FICHAS RECOLOCADAS RESPONSIVE*/
 
-.bs-wizard {margin-top: 40px;}
 .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
 .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
 .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
 .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 78px; display: block; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 78px; display: block; top: 10px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
 .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
@@ -461,16 +465,18 @@ a, a:hover, a:focus {
 
 input[type="radio"]{ display: none; }
  
-                    input[type="radio"] + label span{
-                        display: inline-block;
-                        width: 19px;
-                        height: 19px;
-                        //background: url(img/check_radio_sheet.png) left top no-repeat;
-                        margin: -1px 4px 0 0;
-                        vertical-align: middle;
-                        cursor:pointer;
-                    }
-                    
-                    input[type="radio"]:checked + label span{
-                        color:#AB2848;
-                    }
+input[type="radio"] + label span{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    //background: url(img/check_radio_sheet.png) left top no-repeat;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span{
+    color:#ff9900;
+}
+
+.negocio { min-height: 180px;}

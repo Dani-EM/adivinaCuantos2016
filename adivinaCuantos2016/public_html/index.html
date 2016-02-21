@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<!--
-	Template:	 Unika - Responsive One Page HTML5 Template
-	Author:		 imransdesign.com
-	URL:		 http://imransdesign.com/
-    Designed By: https://www.behance.net/poljakova
-	Version:	1.0	
--->
+
 <html lang="es-ES">
 	<head>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Unika - Responsive One Page HTML5 Template</title>
-		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
-		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
-		<meta name="author" content="imransdesign.com">
+		<title>Adivina Cuántos - 88th Oscars Edition</title>
+                <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<meta name="description" content="Concurso sobre los Oscars | Haz tus predicciones y si ganas tu llevas un cheque-regalo de amazon.es">
+		<meta name="keywords" content="concurso, oscars,2016,actor,actress,movie,awards" />
+		<meta name="author" content="vAlberto & Dani-EM - GitHub.com">
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--                <meta name="viewport" content="width=device-width, initial-scale=1">-->
         
                 <!-- Google Fonts  -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
                 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
-		<!-- Libs and Plugins CSS -->
+                <!-- OpenGraph meta-->
+                <meta property="og:url" content="http://adivinacuantos.com"></meta>
+		<meta property="og:type" content="website"></meta>
+		<meta property="og:title" content="Concursa y gana demostrando que eres un Gran Cinéfilo!"></meta>
+		<meta property="og:description" content="Porra entre amigos y compañeros para disfrutar un poquito más del cine"></meta>
+		<meta property="og:image" content="http://adivinacuantos.com/img/metafb.png"></meta>
+
+                <!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="inc/animations/css/animate.min.css">
 		<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
@@ -80,16 +83,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="body"><span class="fa fa-home fa-2x"></span>&nbsp;&nbsp;<!--Inicio--></a></li>
-                            <li><a class="page-scroll" href="#about-section"><span class="fa fa-question fa-2x"></span>&nbsp;&nbsp;<!--Qué es--></a></li>
-                            <li><a class="page-scroll" href="#services-section"><span class="fa fa-trophy fa-2x"></span>&nbsp;&nbsp;<!--Premio--></a></li>
-                            <!-- <li><a class="page-scroll" href="#concurso-section">Concurso</a></li>
-                            <li><a class="page-scroll" href="#team-section">Team</a></li>                            
-                            <li><a class="page-scroll" href="#prices-section">Prices</a></li> -->
-                            <li><a data-toggle="modal" href="#normas"><span class="fa fa-list-ol fa-2x"></span>&nbsp;&nbsp;<!--Normas--></a></li>
-                            <li><a data-toggle="modal" href="#pagos"><span class="fa fa-eur fa-2x"></span>&nbsp;&nbsp;<!--Pagar--></a></li>
-                            <li><a class="page-scroll" href="#contact-section"><span class="fa fa-film fa-2x"></span>&nbsp;&nbsp;<!--Concurso--></a></li>
-                            <li><a data-toggle="modal" href="#usuarios"><span class="fa fa-user fa-2x"></span>&nbsp;&nbsp;<!--Usuarios--></a></li>
+                            <li><a class="page-scroll" href="body"><span class="fa fa-home fa-1x"></span>&nbsp;&nbsp;Home</a></li>
+<!--                            <li><a class="page-scroll" href="#about-section"><span class="fa fa-question fa-2x"></span>&nbsp;&nbsp;Qué es</a></li>-->
+<!--                            <li><a class="page-scroll" href="#services-section"><span class="fa fa-trophy fa-2x"></span>&nbsp;&nbsp;Premio</a></li>-->
+<!--                            <li><a class="page-scroll" href="#concurso-section">Concurso</a></li>-->
+<!--                            <li><a class="page-scroll" href="#team-section">Team</a></li>-->
+<!--                            <li><a class="page-scroll" href="#prices-section">Prices</a></li>-->
+                            <li><a data-toggle="modal" href="#normas"><span class="fa fa-list-ol fa-1x"></span>&nbsp;&nbsp;Normas</a></li>
+                            <li><a data-toggle="modal" href="#pagos"><span class="fa fa-eur fa-1x"></span>&nbsp;&nbsp;Pagar</a></li>
+                            <li><a class="page-scroll" href="#contact-section"><span class="fa fa-film fa-1x"></span>&nbsp;&nbsp;Votar</a></li>
+                            <li><a data-toggle="modal" href="#usuarios"><span class="fa fa-user fa-1x"></span>&nbsp;&nbsp;Login</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -115,19 +118,19 @@
                                                                 <div class="extra-space-l"></div>
                                                                 <div><img id="chequeSlider" src="img/cheque-regalo.png" alt="cheque-regalo"></div>
                                                                 <div class="extra-space-l"></div>
-                                                                <div class="extra-space-l"></div>
-								<a class="btn btn-primary btn-blank btn-lg" href="http://adivinacuantos.com/#premio" role="button">Premio</a>
+                                                                
+								<a class="btn btn-primary btn-blank btn page-scroll" href="#services-section" role="button">Premio</a>
 							</div>
                                                         <div class="item">
 								<h1>Vive los Oscar's</h1>
 								<p>Participa con tus amigos</p>
                                                                 <div class="extra-space-l"></div>
-								<a class="btn btn-primary btn-blank btn-lg" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+								<a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button">Compartir</a>
 							</div>
 							<div class="item">
 								<h1>Libera ese cinéfilo!</h1>
 								<div class="extra-space-l"></div>
-								<a class="btn btn-primary btn-blank btn-lg" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+                                                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#usuarios"><span class="fa fa-user fa-1x"></span>&nbsp;Login</a>
 							</div>
 						</div>
 
@@ -158,7 +161,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
-                                <div href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
+                                <div class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                     <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
                                     <div class="rotate-box-info">
                                         <h4>Qué es?</h4>
@@ -168,7 +171,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6">
-                                <div href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
+                                <div class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                     <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
                                     <div class="rotate-box-info">
                                         <h4>Quienes somos?</h4>
@@ -178,7 +181,7 @@
                             </div>
 
                             <div class="col-md-3 col-sm-6">
-                                <div href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
+                                <div class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                                     <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
                                     <div class="rotate-box-info">
                                         <h4>Porqué lo hacemos?</h4>
@@ -188,7 +191,7 @@
                             </div>
                             
                             <div class="col-md-3 col-sm-6">
-                                <div href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
+                                <div class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
                                     <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
                                     <div class="rotate-box-info">
                                         <h4>Desde cuando?</h4>
@@ -316,7 +319,7 @@
                             <div class="extra-space-m"></div>
                             <div class="row">
                                     <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                                        <div href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
+                                        <div class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
                                             <span class="rotate-box-icon"><i class="fa fa-eur"></i></span>
                                             <div class="rotate-box-info">
                                                 <p>Si consigues ser el concursante con más puntos tras la entrega de premios de los Oscar's de 2.016
@@ -759,13 +762,13 @@
 					<div class="container">
                                             <div class="row">
                                                 <div class="col-md-6 text-center">
-                                                    <span class="fa fa-paypal fa-2x"><h5>PayPal</h5></span>
+                                                    <h5><span class="fa fa-paypal fa-2x"></span> PayPal</h5>
                                                     <p>Cómodo y fácil. Con saldo propio de PayPal o Cuenta Bancaria es gratis.
                                                     Si usas tarjeta se generará una comisión de 3,4 % más una parte fija de 0,35 €, que pagamos a medias, así que pagarías 3,75€.</p>
                                                 </div>
                                                 <div class="extra-space-m"></div>
                                                 <div class="col-md-6 text-center">
-                                                    <span class="fa fa-cc fa-2x"><h4>Transferencia</h4></span>
+                                                    <h5><span class="fa fa-cc fa-2x"></span> Transferencia</h5>
                                                     <p>Con esta opción nos haces una transferencia normal y corriente a nuestra cuenta. Una vez comprobada
                                                         hacemos válida tu participación.</p>
                                                 </div>
@@ -894,322 +897,269 @@
             <!-- Begin contact section -->
         <section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/map-bg.png); background-repeat: repeat; background-size: 10%;">
             <div class="cover"></div>
-            <div class="panel-heading">
-                <div class="col-xs-3">
-                    <i class="fa fa-5x fa-caret-left enlace-pelicula" onclick="cargaPeliculas('previous')" id="enlacePrev"></i>
-                </div>
-                 <div class="col-xs-6">
-                    <h3 class="panel-title">
-                        <label id="titulo-seccion-nominados">MEJOR DIRECTOR</label>
-                    </h3>
-                 </div>
-                <div class="col-xs-3">
-                    <i class="fa fa-5x fa-caret-right enlace-pelicula" onclick="cargaPeliculas('next')" id="enlaceNext"></i>
-                </div>
-            </div>
-            
-                 <!-- Begin page header-->
-<!--                <div class="page-header-wrapper">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
                     <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h6>Demuestra lo que sabes de cine!</h6>
-                        </div>
+                        <div class="page-header text-center fadeInDownBig wow" data-wow-delay="0.4s"> <!--fadeInDown-->
+                                <div class="row text-center">
+                                    <div class="col-xs-12 text-white">
+                                        <h4><i><img src="img/logo_redes.png" style="max-height: 38px;"/> </i>&nbsp;&nbsp;&nbsp;Panel de votaciones</h4>
+                                    </div>
+                                </div>
+                        </div>    
                     </div>
-                </div>-->
+                </div>
                 <!-- End page header-->
-<div class="container">
+
+            <div class="panel-heading">
+
+<div class="container" style="min-height: 100%;">
     <label class="hidden" id="lblSeccion">1</label>
     <div id="imgCargando" class="container text-center hidden">
                     <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto"> 
     </div>
     <div class="row" id="textoFichas">
-<!--        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Pelicula</h4>
-                                    <p>Dirigida por: </p>
-                                    <p>Profesional que interviene</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
+<div class="row" id="textoFichas"><div class="container">
+                                <div class="row">
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-1">
+                                     </div>
+                                    <div class="col-xs-8 text-center">
+                                        <h3><label id="titulo-seccion-nominados">Mejor Película (Best picture)</label></h3>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                            </div><div class="container"><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>La gran apuesta (The Big Short)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-1" name="10">
+                                            <label for="vota10-1">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-1" name="5">
+                                            <label for="vota5-1">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
                                     </p>
                                     <div class="extra-space-m"></div>
                                 </div>
                             </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/p11Ftd4VposrAzthkhF53ifYZRl.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>El puente de los espías (Bridge of Spies)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-2" name="10">
+                                            <label for="vota10-2">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-2" name="5">
+                                            <label for="vota5-2">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
                             </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/nokkbw7qbEj4qISQSWuTqltkaIo.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>Brooklyn (Id.)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-3" name="10">
+                                            <label for="vota10-3">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-3" name="5">
+                                            <label for="vota5-3">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/yeA0eyNUmMlvXPkm9AHQfzxOwPy.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>Mad Max: Furia en la carretera (Mad Max: Fury Road)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-4" name="10">
+                                            <label for="vota10-4">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-4" name="5">
+                                            <label for="vota5-4">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>Marte (The Martian)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-5" name="10">
+                                            <label for="vota10-5">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-5" name="5">
+                                            <label for="vota5-5">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>El renacido (The Revenant)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-6" name="10">
+                                            <label for="vota10-6">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-6" name="5">
+                                            <label for="vota5-6">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/oXUWEc5i3wYyFnL1Ycu8ppxxPvs.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>La habitación (Room)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-7" name="10">
+                                            <label for="vota10-7">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-7" name="5">
+                                            <label for="vota5-7">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg" class="img img-responsive"></div></div></div></div><div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="offer offer-default negocio">
+            <div class="row">
+            <div class="col-xs-8 col-md-8 text-right">
+            <div>
+            <div class="extra-space-m"></div><h5>Spotlight (Id.)</h5><div class="devider"></div><p style="margin-top: 4px;">
+                                       <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota10-8" name="10">
+                                            <label for="vota10-8">
+                                           <span style="color:white;">10&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                       </button>
+                                        <button type="button" class="btn btn-success">
+                                           <input type="radio" id="vota5-8" name="5">
+                                            <label for="vota5-8">
+                                           <span style="color:white;">5&nbsp;</span> 
+                                           <span class="fa fa-star"></span></label>
+                                        </button>
+                                    </p>
+                                    <div class="extra-space-m"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4"><img src="http://image.tmdb.org/t/p/w185/ngKxbvsn9Si5TYVJfi1EGAGwThU.jpg" class="img img-responsive"></div></div></div></div></div><div class="container">
+        <div class="extra-space-m"></div><div class="row bs-wizard" style="border-bottom:0;">
+        <div class="col-xs-3 bs-wizard-step complete">
+            <div class="text-center bs-wizard-stepnum"><h6>Las Divertidas!!</h6></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Profesional</h4>
-                                    <p>Nominado por su trabajo en: </p>
-                                    <p>Película en que trabaja</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
+        <div class="col-xs-3 bs-wizard-step complete">
+            <div class="text-center bs-wizard-stepnum"><h6>Menos Populares</h6></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Pelicula</h4>
-                                    <p>Dirigida por: </p>
-                                    <p>Profesional que interviene</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
+        <div class="col-xs-3 bs-wizard-step active">
+            <div class="text-center bs-wizard-stepnum"><h6>!!!Puro Cinema!!!</h6></div>
+        </div>        
+        <div class="col-xs-3 bs-wizard-step">
+            <div class="text-center bs-wizard-stepnum"><h6>!Y Esto Fue Todo!</h6></div>
+        </div>        
+    </div><div class="row bs-wizard" style="border-bottom:0;">
+        <div class="col-xs-12 bs-wizard-step complete">
+            <div class="progress" style="left:0; width:100%;"><div class="progress-bar"></div></div>
+            <div class="bs-wizard-dot" style="left:4%"><img src="img/logo_solo.png" class="img-responsive"></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Profesional</h4>
-                                    <p>Nominado por su trabajo en: </p>
-                                    <p>Película en que trabaja</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Pelicula</h4>
-                                    <p>Dirigida por: </p>
-                                    <p>Profesional que interviene</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Profesional</h4>
-                                    <p>Nominado por su trabajo en: </p>
-                                    <p>Película en que trabaja</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Pelicula</h4>
-                                    <p>Dirigida por: </p>
-                                    <p>Profesional que interviene</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/dZjf78JXg0LAjD5qAOs6wFlc67B.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="offer offer-default">
-                <div class="shape">
-                    <div class="shape-text">
-                    top
-                    </div>
-                </div>
-                        <div class="row">
-                            <div class="col-xs-8 col-md-8 text-right">
-                                <div>
-                                    <div class="extra-space-m"></div>
-                                    <h4>Nombre Profesional</h4>
-                                    <p>Nominado por su trabajo en: </p>
-                                    <p>Película en que trabaja</p>
-                                    <div class="devider"></div>
-                                    <p style="margin-top: 4px;">
-                                        <button type="button" class="btn btn-success">1º <span class="fa fa-star"></span></button>
-                                        <button type="button" class="btn btn-success">2º <span class="fa fa-star"></span></button>
-                                    </p>
-                                    <div class="extra-space-m"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w185/wf00R1yhOewunWbB7ncQvb9P3eV.jpg" class="img img-responsive" />
-                            </div>
-                        </div>
-                <div class="offer-content">
-                    <h3 class="lead">A default offer</h3>
-                    <p>And a little description.</p>
-                </div>
-            </div>
-        </div>-->
+    </div>
+</div></div>
     </div>
 </div> <!-- FICHAS RECOLOCADAS RESPONSIVE-->
 
-<div class="container">
+<!--<div class="container">
     <div class="row bs-wizard" style="border-bottom:0;">
-        <div class="col-xs-3 bs-wizard-step complete"><!-- Añadir clase complete, active o null-->
+        <div class="col-xs-3 bs-wizard-step complete"> Añadir clase complete, active o null
             <div class="text-center bs-wizard-stepnum"><h6>Las Divertidas!!</h6></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
-<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+            <div class="bs-wizard-info text-center">Where are you located?</div>
         </div>
-        <div class="col-xs-3 bs-wizard-step complete"><!-- Añadir clase complete, active o null-->
+        <div class="col-xs-3 bs-wizard-step complete"> Añadir clase complete, active o null
             <div class="text-center bs-wizard-stepnum"><h6>Menos Populares</h6></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
-<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+            <div class="bs-wizard-info text-center">Where are you located?</div>
         </div>
-        <div class="col-xs-3 bs-wizard-step active"><!-- Añadir clase complete, active o null-->
+        <div class="col-xs-3 bs-wizard-step active"> Añadir clase complete, active o null
             <div class="text-center bs-wizard-stepnum"><h6>!!!Puro Cinema!!!</h6></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
-<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+            <div class="bs-wizard-info text-center">Where are you located?</div>
         </div>        
-        <div class="col-xs-3 bs-wizard-step"><!-- Añadir clase complete, active o null-->
+        <div class="col-xs-3 bs-wizard-step"> Añadir clase complete, active o null
             <div class="text-center bs-wizard-stepnum"><h6>!Y Esto Fue Todo!</h6></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <div class="bs-wizard-dot"><img src="img/logo_solo.png" class="img-responsive"/></div>
-<!--            <div class="bs-wizard-info text-center">Where are you located?</div>-->
+            <div class="bs-wizard-info text-center">Where are you located?</div>
         </div>        
     </div>
-</div> <!--PROGRESS BAR-->
+</div> PROGRESS BAR-->
 
 </section>
                 
@@ -1365,7 +1315,7 @@
 <!--MODALES-->
 
 <div class="modal fade" id="pagos" tabindex="-1" role="dialog" aria-labelledby="pagos">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content text-center">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -1395,9 +1345,12 @@
                 <div class="devider"></div>
                 <div class="extra-space-m"></div>
                 <p>Pagos por <strong>Transferencia</strong></p>
-                <p>Pincha en el botón y si adivinas la pregunta, te mostramos el número de cuenta.</p>
+                <p>Pincha en el botón y te mostramos el número de cuenta.</p>
                 <div class="extra-space-m"></div>
                 <button type="button" class="btn btn-primary btn-blank" data-dismiss="modal"><span class="fa fa-cc"></span> Transferencia</button>
+                <p class="hidden">IBAN: ES28 1465 0100 93 1702085297 - Código BIC: INGDESMMXXX
+Entidad: ING Bank, N.V., Sucursal en España - C.I.F. W0032177H
+Titular: Alberto Izquierdo Fermosel - 70059741Q</p>
             </div>
 
         </div>
@@ -1405,7 +1358,7 @@
 </div>            
 
 <div class="modal fade" id="normas" tabindex="-1" role="dialog" aria-labelledby="normas">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content text-center">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
