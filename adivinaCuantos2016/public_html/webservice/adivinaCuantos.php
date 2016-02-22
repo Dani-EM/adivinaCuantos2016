@@ -76,17 +76,25 @@ function dameNominaciones_old(){
     session_start();
     if($_SESSION["usuario"]==""){
         $retorno = '<div class="container">
-                    <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-1">
-                    </div>
-                    <div class="col-xs-8 text-center">
-                    <h3>Logueate desde el login del menú superior</h3>
-                    </div>
-                    <div class="col-xs-1">
-                    </div>
-                    <div class="col-xs-1"></div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-8 text-center">
+                                <h4>Para empezar a hacer tus votaciones pincha en login. Y si no has leído las normas ahora es buen momento.</h4>
+                            </div>
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-1"></div>
+                        </div>
+                        <div class="extra-space-m"></div>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#usuarios"><span class="fa fa-user"></span>&nbsp;Login</a>
+                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#normas"><span class="fa fa-list-ol"></span>&nbsp;Normas</a>
+                            </div>
+                            <div class="extra-space-xxl"></div>
+                            <div class="devider"></div>
+                            <div class="extra-space-xxl"></div>
+                        </div>
                     </div>';
     }else{
         $idCategoria = '0';
@@ -95,19 +103,22 @@ function dameNominaciones_old(){
         } 
         
         if($idCategoria==25){
-            $retorno = '<div class="container">
-                        <div class="row">
-                        <div class="col-xs-1"></div>
-                        <div class="col-xs-1">
-                        </div>
-                        <div class="col-xs-8 text-center">
-                        <h3>¡¡ENHORABUENA!! Ya tenemos tus votaciones.</h3>
-                        <h3>¡¡¡¡MUCHA SUERTE!!!!</h3>
-                        </div>
-                        <div class="col-xs-1">
-                        </div>
-                        <div class="col-xs-1"></div>
-                        </div>
+            $retorno = '<div class="row">
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-8 text-center">
+                                    <p><h3>¡ENHORABUENA!</h3></p>
+                                    <div class="extra-space-m"></div>
+                                    <p><h3>Ya tenemos tus votaciones.</h3></p>
+                                    <p><h3>¡Mucha Suerte!</h3></p>
+                                    <div class="extra-space-m"></div>
+                                    <div class="devider"></div>
+                                </div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-1"></div>
+                            </div>
+                            <div class="extra-space-xxl"></div>
+                            <a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button"><span class="fa fa-share-alt"></span>&nbsp;&nbsp;Compartir</a>
                         </div>';
 
         }else{

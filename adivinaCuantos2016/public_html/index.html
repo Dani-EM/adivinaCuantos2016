@@ -119,13 +119,13 @@
                                                                 <div><img id="chequeSlider" src="img/cheque-regalo.png" alt="cheque-regalo"></div>
                                                                 <div class="extra-space-l"></div>
                                                                 
-								<a class="btn btn-primary btn-blank btn page-scroll" href="#services-section" role="button">Premio</a>
+                                                                <a class="btn btn-primary btn-blank btn page-scroll" href="#services-section" role="button"><span class="fa fa-trophy"></span>&nbsp;&nbsp;Premio</a>
 							</div>
                                                         <div class="item">
 								<h1>Vive los Oscar's</h1>
 								<p>Participa con tus amigos</p>
                                                                 <div class="extra-space-l"></div>
-								<a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button">Compartir</a>
+								<a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button"><span class="fa fa-share-alt"></span>&nbsp;&nbsp;Compartir</a>
 							</div>
 							<div class="item">
 								<h1>Libera ese cinéfilo!</h1>
@@ -285,7 +285,7 @@
                         
                         <div class="col-md-3">
                         	<div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
-                                    <a class="btn btn-primary btn-blank btn-lg" href="https://drive.google.com/file/d/0B9q-BotVaHw1aFUzMkpXMUJjWFk/view" target="_blank" role="button"><span class="fa fa-list-ol"> </span>  Normas</a>
+                                    <a class="btn btn-primary btn-blank btn-lg" href="https://1c794c3b173f15bc26b85f8c7645d4c28cda099a-www.googledrive.com/host/0B4l_nAxgxD2dTnRxVnQ4ZWlfelE/" target="_blank" role="button"><span class="fa fa-list-ol"> </span>&nbsp;&nbsp;Nominaciones</a>
                         	</div>
                         </div>
                         
@@ -762,13 +762,13 @@
 					<div class="container">
                                             <div class="row">
                                                 <div class="col-md-6 text-center">
-                                                    <h5><span class="fa fa-paypal fa-2x"></span> PayPal</h5>
+                                                    <h5><span class="fa fa-paypal fa-2x"></span>&nbsp;&nbsp;PayPal</h5>
                                                     <p>Cómodo y fácil. Con saldo propio de PayPal o Cuenta Bancaria es gratis.
-                                                    Si usas tarjeta se generará una comisión de 3,4 % más una parte fija de 0,35 €, que pagamos a medias, así que pagarías 3,75€.</p>
+                                                    Si usas tarjeta se generará una pequeña comisión del 3,4 % más una parte fija de 0,35 €. No llega a 0,60 € en total.</p>
                                                 </div>
-                                                <div class="extra-space-m"></div>
+<!--                                                <div class="extra-space-m"></div>-->
                                                 <div class="col-md-6 text-center">
-                                                    <h5><span class="fa fa-cc fa-2x"></span> Transferencia</h5>
+                                                    <h5><span class="fa fa-cc fa-2x"></span>&nbsp;&nbsp;Transferencia</h5>
                                                     <p>Con esta opción nos haces una transferencia normal y corriente a nuestra cuenta. Una vez comprobada
                                                         hacemos válida tu participación.</p>
                                                 </div>
@@ -839,7 +839,7 @@
 										<li class="list-group-item">24/7 Support</li>
 									</ul>-->
 									<div class="panel-footer text-center">
-                                                                            <a data-toggle="modal" class="btn btn-primary btn-lg btn-blank" href="#pagos"><h5>Haz el pago</h5></a>
+                                                                            <a data-toggle="modal" class="btn btn-primary btn btn-blank" href="#pagos"><h5><span class="fa fa-eur"></span>&nbsp;&nbsp;Haz el pago</h5></a>
 									</div>
 								</div>										
 							</div>
@@ -858,7 +858,7 @@
 										<li class="list-group-item">2€ donados para mejoras futuras</li>
 									</ul>
 									<div class="panel-footer text-center">
-                                                                            <a data-toggle="modal" class="btn btn-primary btn-lg btn-blank" href="#pagos"><h5>Haz el pago</h5></a>
+                                                                            <a data-toggle="modal" class="btn btn-primary btn btn-blank" href="#pagos"><h5><span class="fa fa-eur"></span>&nbsp;&nbsp;Haz el pago</h5></a>
 									</div>
 									<div class="price-box-ribbon"><strong>Gracias</strong></div>
 								</div>										
@@ -916,23 +916,27 @@
 <div class="container" style="min-height: 100%;">
     <label class="hidden" id="lblSeccion">1</label>
     <div id="imgCargando" class="container text-center hidden">
-                    <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto"> 
+        <img src="img/loading.gif" alt="cargando" class="height-60 margin-auto"> 
     </div>
-    <div class="row" id="textoFichas">
+</div>
+                <!-- AQUÍ HABRÍA QUE REVISAR SI VAN LOS DIV - NO LO VEO CLARO-->
+<!--<div class="row" id="textoFichas">
 <div class="row" id="textoFichas"><div class="container">
-                                <div class="row">
-                                    <div class="col-xs-1"></div>
-                                    <div class="col-xs-1">
-                                     </div>
-                                    <div class="col-xs-8 text-center">
-                                        <h3><label id="titulo-seccion-nominados">Mejor Película (Best picture)</label></h3>
-                                    </div>
-                                    <div class="col-xs-1">
-                                        <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
-                                    </div>
-                                    <div class="col-xs-1"></div>
-                                </div>
-                            </div><div class="container"><div class="col-xs-12 col-sm-6 col-md-4">
+<div class="container">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-1">
+                </div>
+                <div class="col-xs-12 col-sm-8 text-center">
+                    <h4><label id="titulo-seccion-nominados">Mejor Película (Best picture)</label></h4>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-center">
+                    <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank"><strong><span class="fa fa-plus"></span>&nbsp;&nbsp;Votar</strong></a>
+                </div>
+            </div>
+            <div class="extra-space-m"></div>
+        </div>
+        <div class="container"><div class="col-xs-12 col-sm-6 col-md-4">
             <div class="offer offer-default negocio">
             <div class="row">
             <div class="col-xs-8 col-md-8 text-right">
@@ -1127,10 +1131,11 @@
             <div class="progress" style="left:0; width:100%;"><div class="progress-bar"></div></div>
             <div class="bs-wizard-dot" style="left:4%"><img src="img/logo_solo.png" class="img-responsive"></div>
         </div>
+        </div>
     </div>
-</div></div>
-    </div>
-</div> <!-- FICHAS RECOLOCADAS RESPONSIVE-->
+</div>
+</div>
+</div>  FICHAS RECOLOCADAS RESPONSIVE-->
 
 <!--<div class="container">
     <div class="row bs-wizard" style="border-bottom:0;">
@@ -1325,10 +1330,10 @@
                 <p>Recuerda:</p>
                 <div class="row">
                     <div class="col-xs-6">
-                        <p><strong><h4>4€</h4></strong><h5>Concursante Normal.</h5></p>
+                        <p><h4>4€</h4><h5>Concursante Normal.</h5></p>
                     </div>    
                     <div class="col-xs-6">
-                        <p><strong><h4>6€</h4></strong><h5>SÚPER Concursante donante.</h5></p>
+                        <p><h4>6€</h4><h5>SÚPER Concursante donante.</h5></p>
                     </div>    
                 </div>
                 <div class="extra-space-m"></div>
@@ -1339,23 +1344,26 @@
                 <p>Pagos en <strong>PayPal</strong></p>
                 <p>Pincha en el botón y llegarás a la pantalla de paypal.me de adivinacuantos.</p>
                 <div class="extra-space-m"></div>
-                <a class="btn btn-primary btn-blank" href="http://www.paypal.me/adivinacuantos/4" target="_blank"><h5><span class="fa fa-paypal"></span> 4€</h5></a>
-                <a class="btn btn-primary btn-blank" href="http://www.paypal.me/adivinacuantos/6" target="_blank"><h5><span class="fa fa-paypal"></span> 6€</h5></a>
+                <a class="btn btn-primary btn-blank" href="http://www.paypal.me/adivinacuantos/4" target="_blank"><h5><span class="fa fa-paypal"></span>&nbsp;&nbsp;4€</h5></a>
+                <a class="btn btn-primary btn-blank" href="http://www.paypal.me/adivinacuantos/6" target="_blank"><h5><span class="fa fa-paypal"></span>&nbsp;&nbsp;6€</h5></a>
                 <div class="extra-space-m"></div>
                 <div class="devider"></div>
                 <div class="extra-space-m"></div>
-                <p>Pagos por <strong>Transferencia</strong></p>
-                <p>Pincha en el botón y te mostramos el número de cuenta.</p>
+                <span class="fa fa-cc fa-2x"></span>
                 <div class="extra-space-m"></div>
-                <button type="button" class="btn btn-primary btn-blank" data-dismiss="modal"><span class="fa fa-cc"></span> Transferencia</button>
-                <p class="hidden">IBAN: ES28 1465 0100 93 1702085297 - Código BIC: INGDESMMXXX
-Entidad: ING Bank, N.V., Sucursal en España - C.I.F. W0032177H
-Titular: Alberto Izquierdo Fermosel - 70059741Q</p>
+                <p>Pagos por <strong>Transferencia</strong></p>
+                <p>Aquí tienes los números de cuenta:.</p>
+                <div class="extra-space-m"></div>
+<!--                <button type="button" class="btn btn-primary btn-blank" data-dismiss="modal"> Transferencia</button>-->
+                <p>Entidad: ING Bank, N.V., Sucursal en España - C.I.F. W0032177H</p>
+                <p>IBAN: ES28 1465 0100 93 1702085297</p>
+                <p>Entidad: Banco Bilbao Vizcaya Argentaria, S.A. - C.I.F. A48265169</p>
+                <p>IBAN: ES93 0182 0959 90 0201607597</p>
             </div>
 
         </div>
     </div>
-</div>            
+</div>
 
 <div class="modal fade" id="normas" tabindex="-1" role="dialog" aria-labelledby="normas">
     <div class="modal-dialog modal-lg" role="document">
@@ -1365,40 +1373,29 @@ Titular: Alberto Izquierdo Fermosel - 70059741Q</p>
                 <h4 class="modal-title" id="myModalLabel"><span class="fa fa-list-ol"></span>&nbsp;&nbsp;Normas</h4>
             </div>
             <div class="modal-body text-left">
-                <p><h5><span class="fa fa-check"></span>&nbsp;&nbsp;Registro</h5></p>
-                <p>- Llegas a la página, te registras pinchando en "Registro" del menú superior.</p>
+                <p><h5><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Registro</h5></p>
+            <p>Para poder manejar tus votaciones necesitamos que crees un usuario. Pincha en <strong><span class="fa fa-user-plus"></span> Login</strong> del menú superior.</p>
+                <p>Tienes botón de <strong><span class="fa fa-user-plus"></span> Crear</strong>, para la primera vez que entres, y de <strong><span class="fa fa-key"></span> Entrar</strong>, por sí no hicieras tus votaciones en una sóla sesión. Elige un Nick (que es lo único que será público) e introduce tu correo electrónico para que nos comuniquemos. El Nick es sensible a mayúsculas y minúsculas, tenlo en cuenta.</p>
                 <div class="extra-space-m"></div>
-                <p>- Eliges un nick e introduces el mail con el que quieras que nos comuniquemos.</p>
+                <p><h5><span class="fa fa-star"></span> <span class="fa fa-star"></span>&nbsp;&nbsp;Votaciones</h5></p>
+                <p>Para votar debes ir a la sección <strong>Panel de Votaciones</strong>. Pinchando en <strong><span class="fa fa-film"></span> Votar</strong> vas directamente, y al hacer login también.</p>
                 <div class="extra-space-m"></div>
-                <p>- Debes tener en cuenta que si no estas logueado no podrás acceder al panel del concurso para hacer tus votaciones. Si te ocurre logueate y pincha en "Concurso" en el menú superior.</p>
+                <p>En este panel van apareciendo todas las películas o profesionales nominados en cada categoría del Oscar. Al lado de cada candidato verás dos botones con <span class="fa fa-star"></span>.</p>
+                <p>Las votaciones se hacen eligiendo 2 opciones o candidatos para cada Oscar, uno como 1ª opción pinchando en <button type="button" class="btn btn-xs btn-success">10 <span class="fa fa-star"></span></button> que si aciertas te hará sumar 10 estrellas o puntos,
+                    y otro como 2ª opción clicando en <button type="button" class="btn btn-xs btn-success">5 <span class="fa fa-star"></span></button> lo que te daría 5 estrellas. <strong>No</strong> se puede votar al mismo candidato como 1ª y 2ª opción.</p>
                 <div class="extra-space-m"></div>
-                <p><h5><span class="fa fa-check"></span>&nbsp;&nbsp;Votaciones</h5></p>
-                <p>- Cuando te hayas registrado pincha en "Concurso" del menú superior y llegas al panel de votaciones.</p>
+                <p><h5><span class="fa fa-list-ul"></span>&nbsp;&nbsp;Puntuaciones</h5></p>
+                <p>Al finalizar la ceremonia de entrega de los Oscar's, que se celebra el Domingo, día 28 de febrero de 2.016, iniciaremos el recuento de puntos. Cuando hagas tus votaciones te mandamos un email que las recoje, y en el caso de que resultes ganador recibirás el cheque-regalo <i class="fa fa-gift"></i> en formato electrónico para canjear en amazon.es.</p>
                 <div class="extra-space-m"></div>
-                <p>- En este panel te van a ir apareciendo todas las películas o profesionales nominados en cada categoría. Al lado de cada candidato verás estos dos botones
-                    <button type="button" class="btn btn-xs btn-success">10 <span class="fa fa-star"></span></button>
-                    <button type="button" class="btn btn-xs btn-success">5 <span class="fa fa-star"></span></button>
-                </p>
+                <p><h5><span class="fa fa-eur"></span>&nbsp;&nbsp;Pago de la cuota de participación</h5></p>
+                <p>Este concurso está montado para amigos, compañeros, colegas... y no tiene motivación de generar ingresos. Se
+                    podría decir que "no" tenemos ánimo de lucro. Toda la recaudación del concurso será empleada en el cheque-regalo del ganador. El único gasto
+                    que imputamos a la recaudación son los 15€ que nos cuesta comprar el dominio adivinacuantos.com</p>
                 <div class="extra-space-m"></div>
-                <p>- Para votar en cada categoría u Oscar debes elegir dos candidatos, uno como 1ª opción pinchando en 10&nbsp;<span class="fa fa-star"></span>, que si aciertas te hará sumar 10 estrellas o puntos,
-                    y otro como 2ª opción clicando en 5&nbsp;<span class="fa fa-star"></span>, lo que te daría 5 estrellas. <strong>No</strong> se puede votar al mismo candidato como 1ª y 2ª opción.</p>
-                <div class="extra-space-m"></div>
-                <p><h5><span class="fa fa-check"></span>&nbsp;&nbsp;Puntuaciones</h5></p>
-                <p>- Cómo te deciamos, si el candidato elegido de 1ª opción gana el Oscar de este año sumarás a tu marcador 10 <span class="fa fa-star"></span>, si lo hace tu 2ª opción consigues 5 <span class="fa fa-star"></span>.</p>
-                <div class="extra-space-m"></div>
-                <p>- Al finalizar la ceremonia de entrega de los Oscar's, que se celebra el Domingo, día 28 de febrero, iniciaremos el recuento de puntos.</p>
-                <div class="extra-space-m"></div>
-                <p>- Lo antes posible te mandaremos un email con los resultados, y en el caso de que resultes ganador recibirás el cheque-regalo <i class="fa fa-gift"></i> en formato electrónico para gastar en amazon.es.</p>
-                <div class="extra-space-m"></div>
-                <p><h5><span class="fa fa-check"></span>&nbsp;&nbsp;Pago de la cuota de participación</h5></p>
-                <p>- Antes de nada, aclaramos el tema económico. Este concurso está montado para amigos, compañeros, colegas... y no tiene motivación de generar ingresos. Se
-                    podría decir que "no" tenemos ánimo de lucro. Todo la recaudación del concurso será empleado en el cheque-regalo que se llevará el ganador. El único gasto
-                    que imputamos a la recaudación son los 15€ que nos cuesta comprar el dominio adivinacuantos.com.</p>
-                <div class="extra-space-m"></div>
-                <p>- Aclarado esto, la cuota de participación es de 4€. También te dejamos la opción de pagar 6€, de los que nos donarías 2€ para que el año que viene podamos hacer alguna mejora en el concurso.
+                <p>La cuota de participación es de 4€. También te dejamos la opción de pagar 6€, de los que nos donarías 2€ para que el año que viene podamos hacer alguna mejora en el concurso.
                     Ya te imaginarás que automáticamente tendrás un trocito de nuestro <span class="fa fa-heart"></span>.</p>
                 <div class="extra-space-m"></div>
-                <p>- La manera de hacernos llegar tu cuota puede ser mediante <span class="fa fa-cc-paypal"></span> o mediante transferencia en <span class="fa fa-cc"></span>. Además, si tienes la inmensa suerte de conocernos en persona puedes pagar en efectivo-metálico. Procura llevar suelto ;)</p>
+                <p>- La manera de hacernos llegar tu cuota puede ser mediante <span class="fa fa-paypal"></span> PayPal o mediante transferencia <span class="fa fa-cc"></span>. Además, si tienes la inmensa suerte de conocernos en persona puedes pagar en efectivo-metálico. Procura llevar suelto ;). Si pinchas en <span class="fa fa-eur"></span> Pagar del menú superior tienes enlaces a paypal.me/adivinacuantos.com y los números de cuenta.</span></p>
                 <div class="extra-space-m"></div>
                 <div class="devider"></div>
             </div>
@@ -1419,10 +1416,19 @@ Titular: Alberto Izquierdo Fermosel - 70059741Q</p>
                             <div class="form-signin">
                                 <input type="text" id="inputNick" class="form-control" placeholder="Nick o alias" required autofocus>
                                 <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
-                                <button onclick="validarUsuario()" class="btn btn-primary btn-blank" ><span class="fa fa-key"></span>&nbsp;&nbsp;Entrar</button>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button onclick="validarUsuario()" class="btn btn-primary btn-blank" ><strong><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Crear</strong></button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button onclick="validarUsuario()" class="btn btn-primary btn-blank" ><strong><span class="fa fa-key"></span>&nbsp;&nbsp;Entrar</strong></button>
+                                    </div>
+                                </div>
+                                
+<!--                                <button onclick="validarUsuario()" class="btn btn-primary btn-blank" ><span class="fa fa-key"></span>&nbsp;&nbsp;Entrar</button>-->
                             </div><!-- /form -->
                             <div class="signin-help">
-                                <p><a href="mailto:adivinacuantos@gmail.com?Subject=Tengo%20un%20problemilla...%20Échame%20una%20mano!" target="_top">Problemas?</a></p>
+                                <p><a href="mailto:adivinacuantos@gmail.com?Subject=Tengo%20un%20problemilla...%20Échame%20una%20mano!" target="_top" style="color: darkslategrey;">Problemas? Cuéntanos.</a></p>
                             </div>
                     </div>
                 <div class="devider"></div>
@@ -1431,7 +1437,31 @@ Titular: Alberto Izquierdo Fermosel - 70059741Q</p>
     </div>
 </div>
                                               
-        </div><!-- body ends -->
+<div class="modal fade" id="alertPanel" tabindex="-1" role="dialog" aria-labelledby="alertPanel">
+    <div class="modal-dialog modal-xs" role="document">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><span class="fa fa-exclamation-circle"></span>&nbsp;&nbsp;Error</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p><strong>Recuerda:</strong></p>
+                <div class="extra-space-m"></div>
+                <p>Debes votar a dos candidatos distintos.</p>
+                <div class="extra-space-m"></div>
+<!--                Esta línea de abajo para cuando votan con 10 y 5 a la misma nominación-->
+                <p>Uno como 1ª opción que te haría sumar 10 <span class="fa fa-star"></span>, y otro distinto como 2ª opción que te sumaría 5 <span class="fa fa-star"></span>.</p>
+<!--                Estas líneas de abajo para cuando se dejan sin votar una de las dos nominaciones-->
+                <p>No has seleccionado ninguna <span class="fa fa-star"></span>, o sólo una.</p>
+                <p>Tienes que pinchar en 10 <span class="fa fa-star"></span> para fijar tu 1ª opción, y en 5 <span class="fa fa-star"></span> para la 2ª opción.</p>
+                <div class="extra-space-m"></div>
+                <div class="devider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div><!-- body ends -->
         
         
         
