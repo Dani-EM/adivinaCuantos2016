@@ -18,6 +18,7 @@ class CVotacion {
     private $idVotacion;
     private $idUsuario;
     private $idNominacion;
+    private $idCategoria;
     private $puntuacion;
     /*----------------*/
 
@@ -36,6 +37,10 @@ class CVotacion {
     {
             $this->idNominacion = $value;
     }
+    public function setIdCategoria($value)
+    {
+            $this->idCategoria = $value;
+    }
     public function setPuntuacion($value)
     {
             $this->puntuacion = $value;
@@ -53,6 +58,10 @@ class CVotacion {
     public function getIdNominacion()
     {
             return $this->idNominacion;
+    }
+    public function getIdCategoria()
+    {
+            return $this->idCategoria;
     }
     public function getPuntuacion()
     {
@@ -77,27 +86,21 @@ class CVotacion {
 
     public function graba($con){
 
-        if (($stmt = $con->prepare("INSERT INTO votaciones (idUsuario, idNominacion, puntuacion) VALUES (?, ?, ?)"))==true){
-            $stmt->bind_param('iii', $this->idUsuario, $this->idNominacion, $this->puntuacion);
+        if (($stmt = $con->prepare("INSERT INTO votaciones (idUsuario, idNominacion, idCategoria, puntuacion) VALUES (?, ?, ?, ?)"))==true){
+            $stmt->bind_param('iiii', $this->idUsuario, $this->idNominacion, $this->idCategoria, $this->puntuacion);
             $stmt->execute();
 
             return $stmt->affected_rows;
              
          }
-         /*else{
-             die ("Mysql Error: " . $con->error);
-             
-         }
-        */
-
-        
+         
     }
 
     /*--------------------------*/
     /* Métodos Recuperación     */
     /*--------------------------*/
 
-    public static function dameVotaciones($con,$idVotacion=NULL,$idUsuario=NULL,$idNominacion=NULL,$puntuacion=NULL){
+    public static function dameVotaciones($con,$idVotacion=NULL,$idUsuario=NULL,$idNominacion=NULL,$idCategoria=NULL,$puntuacion=NULL){
         $votaciones = array();
         
         $sql = "SELECT * FROM votaciones WHERE 1=1";
@@ -111,6 +114,9 @@ class CVotacion {
         if ($idNominacion) {
             $sql .= " AND idNominacion=".$idNominacion;
         }
+        if ($idCategoria) {
+            $sql .= " AND idCategoria=".$idCategoria;
+        }
         if ($puntuacion) {
             $sql .= " AND puntuacion=".$puntuacion;
         }
@@ -123,6 +129,7 @@ class CVotacion {
             $votacion->setIdVotacion($row['idVotacion']);
             $votacion->setIdUsuario($row['idUsuario']);
             $votacion->setIdNominacion($row['idNominacion']);
+            $votacion->setIdCategoria($row['idCategoria']);
             $votacion->setPuntuacion($row['puntuacion']);
             array_push($votaciones, $votacion);
         }
