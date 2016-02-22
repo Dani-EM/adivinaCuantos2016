@@ -86,14 +86,26 @@ class CVotacion {
 
     public function graba($con){
 
-        if (($stmt = $con->prepare("INSERT INTO votaciones (idUsuario, idNominacion, idCategoria, puntuacion) VALUES (?, ?, ?, ?)"))==true){
+        if($this->idVotacion > 0){
+            if (($stmt = $con->prepare("UPDATE votaciones
+                            SET idUsuario=?, idNominacion=?,
+                            idCategoria=?, puntuacion=?
+                            WHERE idVotacion=? "))==true){
+            $stmt->bind_param('iiiii', $this->idUsuario, $this->idNominacion, $this->idCategoria, $this->puntuacion, $this->idVotacion);
+            $stmt->execute();
+
+            return $stmt->affected_rows;
+             
+         }
+        }else{
+            if (($stmt = $con->prepare("INSERT INTO votaciones (idUsuario, idNominacion, idCategoria, puntuacion) VALUES (?, ?, ?, ?)"))==true){
             $stmt->bind_param('iiii', $this->idUsuario, $this->idNominacion, $this->idCategoria, $this->puntuacion);
             $stmt->execute();
 
             return $stmt->affected_rows;
              
          }
-         
+        }
     }
 
     /*--------------------------*/
@@ -138,4 +150,23 @@ class CVotacion {
 
     }
 
+    public static function dameUltimaCategoriaVotada($con, $idUsuario=NULL){
+        $ultimaCategoriaVotada = 1;
+        if($idUsuario == NULL){
+            return $ultimaCategoriaVotada;
+        }else{
+            $sql = "SELECT idCategoria FROM votaciones WHERE idUsuario=".$idUsuario." ORDER BY idCategoria ASC";
+       
+            $result = mysqli_query($con, $sql);
+
+            while($row = mysqli_fetch_array($result))
+            {
+                $ultimaCategoriaVotada = $row['idCategoria'];
+            }
+
+             return $ultimaCategoriaVotada;
+
+        }
+    }
+    
 }

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   inicializaPeliculas();
+   inicializaPeliculas(); 
 });
 
 function inicializaPeliculas(){
@@ -115,13 +115,13 @@ function validarUsuario(){
             data: { "validaUsuario" :  true , "emailUsuario" :  $("#inputEmail").val() , "nickUsuario" : $("#inputNick").val() },
             success: function(data){
                 if(data!=="0"){
-                    inicializaPeliculas();
                     $("#inputEmail").val("");
                     $("#inputNick").val("");
                     $('#usuarios').modal('hide');
                     $('html, body').animate({
-                        scrollTop: $("#textoFichas").offset().top
+                        scrollTop: ($("#contact-section").offset().top - $("#main-navbar").height()) 
                       }, 1000);
+                    inicializaPeliculas();
                 }else{
                     alert("Usuario No Encontrado");
                 }
