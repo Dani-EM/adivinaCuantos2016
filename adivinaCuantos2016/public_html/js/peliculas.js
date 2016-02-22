@@ -1,8 +1,8 @@
 $(document).ready(function(){
-   inicializaPeliculas(); 
+   inicializaNominaciones(); 
 });
 
-function inicializaPeliculas(){
+function inicializaNominaciones(){
     $("#enlacePrev").addClass("hidden");
     $("#imgCargando").removeClass("hidden");
     //$('#titulo-seccion-nominados').text('Mejor Película (Best picture)');
@@ -26,11 +26,15 @@ function inicializaPeliculas(){
     }
  }
 
-function cargaPeliculas(){
+function cargaNominaciones(){
     $("#imgCargando").removeClass("hidden");
     $("#textoFichas").html('');
-    
-    try
+    setTimeout(webserviceNominaciones, 2000);
+   
+ }
+ 
+ function webserviceNominaciones(){
+      try
     { 
         $.ajax({
             type: "POST",
@@ -80,7 +84,7 @@ function vota(){
                         url: "webservice/adivinaCuantos.php",
                         data: { "agregaVotacion" :  true , "idNominacion10" : nNominacion10, "idNominacion5" : nNominacion5 , "idCategoria" : idSeccion },
                         success: function(data){
-                            alert(data);
+                            //alert(data);
                         }
                     });
                 } 
@@ -88,7 +92,7 @@ function vota(){
                 {
                   alert(err);
                 }
-                cargaPeliculas(1);
+                cargaNominaciones();
             }
         }else{
             alert("Tienes que votar con 10 y 5 puntos.");
