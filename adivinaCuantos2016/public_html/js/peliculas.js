@@ -1,6 +1,28 @@
 $(document).ready(function(){
-   inicializaNominaciones(); 
-});
+   inicializaNominaciones();
+   inicializaUsuarioLogado();
+ });
+
+function inicializaUsuarioLogado(){
+    try
+    { 
+        $.ajax({
+            type: "POST",
+            url: "webservice/adivinaCuantos.php",
+            data: { "dameUsuarioLogado" :  true },
+            success: function(data){
+                $("#spanLogin").text('');
+                $("#spanLogin").text(data);
+            }
+        });
+    } 
+    catch (err) 
+    {
+      alert(err);
+    }
+    
+}
+
 
 function inicializaNominaciones(){
     $("#enlacePrev").addClass("hidden");
@@ -108,14 +130,16 @@ function validarUsuario(){
             url: "webservice/adivinaCuantos.php",
             data: { "validaUsuario" :  true , "emailUsuario" :  $("#inputEmail").val() , "nickUsuario" : $("#inputNick").val() },
             success: function(data){
-                if(data!=="0"){
+                $("#spanLogin").text('');
+                $("#spanLogin").text(data);
+                if(data!=="LOGIN"){
                     $("#inputEmail").val("");
                     $("#inputNick").val("");
                     $('#usuarios').modal('hide');
                     $('html, body').animate({
                         scrollTop: ($("#contact-section").offset().top - $("#main-navbar").height()) 
                       }, 1000);
-                    inicializaPeliculas();
+                    cargaNominaciones();
                 }else{
                     alert("Usuario No Encontrado");
                 }

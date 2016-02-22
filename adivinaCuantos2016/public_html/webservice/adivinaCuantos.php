@@ -10,6 +10,10 @@ if(isset($_POST['dameNominaciones'])) {
 
 if(isset($_POST['agregaVotacion'])) {
   echo agregaVotacion();
+}
+
+if(isset($_POST['dameUsuarioLogado'])) {
+  echo dameUsuarioLogado();
 } 
 
 function validaUsuario(){
@@ -24,7 +28,7 @@ function validaUsuario(){
     // Check connection
     if (mysqli_connect_errno())
     {
-        return "ERROR EN LA BBDD " . mysqli_connect_error();
+        return 'LOGIN';
     }else
     {
         $nickUsuario = '';
@@ -40,13 +44,16 @@ function validaUsuario(){
         
         $usuario = CUsuario::dameUsuario($con,$nickUsuario,$emailUsuario);
         
-        if ($usuario->getIdUsuario() > 0) {
-            $_SESSION["usuario"]=$usuario->getIdUsuario();
-        }
-        
         mysqli_close($con);
         
-        return $usuario->getIdUsuario();
+        if ($usuario->getIdUsuario() > 0) {
+            $_SESSION["usuario"]=$usuario->getIdUsuario();
+            return $usuario->getNick();
+        }else{
+            return 'LOGIN';
+        }
+        
+        
     }   
     
 }
@@ -442,4 +449,43 @@ function dameNominaciones(){
 
     }
     return $retorno;
+}
+
+function dameUsuarioLogado(){
+    include("../negocio/CUsuario.php");
+    
+    session_start();
+    if($_SESSION["usuario"]==""){
+        return 'LOGIN';
+    }else{
+        $host="mysql.hostinger.es";  //mysql.hostinger.es localhost
+        $user="u755245033_admin";  //u755245033_admin root
+        $password="admin1234"; //admin1234
+        $db="u755245033_cine"; //u755245033_cine concurso_cine
+        $con=mysqli_connect($host,$user,$password,$db);
+
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            return 'LOGIN';
+        }else
+        {
+
+            $usuario = CUsuario::dameUsuarioId($con,$_SESSION["usuario"]);
+
+            mysqli_close($con);
+
+            if ($usuario->getIdUsuario() > 0) {
+                 return $usuario->getNick();
+            }else{
+                return 'LOGIN';
+            }
+
+
+        }  
+        
+    }
+
+ 
+    
 }

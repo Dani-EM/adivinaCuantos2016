@@ -109,6 +109,22 @@ class CUsuario {
 
             return $usuario;
         }
+        
+         public static function dameUsuarioId($con,$idUsuario){
+
+            $result = mysqli_query($con,"SELECT * FROM usuarios WHERE idUsuario=".$idUsuario);
+
+            $usuario = new CUsuario();
+            while($row = mysqli_fetch_array($result))
+            {
+                $usuario->setIdUsuario($row['idUsuario']);
+                $usuario->setNick($row['nick']);
+                $usuario->setEmail($row['email']);
+                $usuario->setHaPagado($row['haPagado']);
+            }
+
+            return $usuario;
+        }
 
 
         /*----------------*/
