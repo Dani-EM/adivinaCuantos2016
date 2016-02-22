@@ -26,16 +26,7 @@ function inicializaPeliculas(){
     }
  }
 
-function cargaPeliculas(siguienteSeccion){
-    var idSeccion = parseInt($('#lblSeccion').text());
-    switch(siguienteSeccion) {
-        case 0:
-            idSeccion-=1;
-            break;
-        case 1:
-            idSeccion+=1;
-            break;
-    }
+function cargaPeliculas(){
     $("#imgCargando").removeClass("hidden");
     $("#textoFichas").html('');
     
@@ -44,12 +35,11 @@ function cargaPeliculas(siguienteSeccion){
         $.ajax({
             type: "POST",
             url: "webservice/adivinaCuantos.php",
-            data: { "dameNominaciones" :  true , "idSeccion" :  idSeccion},
+            data: { "dameNominaciones" :  true },
             success: function(data){
                 $("#imgCargando").addClass("hidden");
                 $("#textoFichas").html(data);
-                $('#lblSeccion').text(idSeccion);
-            }
+           }
         });
     } 
     catch (err) 

@@ -51,7 +51,7 @@ function validaUsuario(){
     
 }
 
-function dameNominaciones(){
+function dameNominaciones_old(){
     $retorno = '';
 
     session_start();
@@ -230,7 +230,7 @@ function agregaVotacion(){
         $idCategoria = $_POST['idCategoria'];
     }
     
-    if(($idUsuario > 0) && ($idNominacion10 > 0) && ($idNominacion5 > 0) && ($idCategoria > 0)){
+    if(($idUsuario > 0) && ($idNominacion10 > 0) && ($idNominacion5 > 0)){
         include("../negocio/CVotacion.php");
 
         $host="mysql.hostinger.es";  //mysql.hostinger.es localhost
@@ -245,10 +245,11 @@ function agregaVotacion(){
             return "ERROR EN LA BBDD " . mysqli_connect_error();
         }else
         {
+            $idCategoria = CVotacion::dameUltimaCategoriaVotada($con, $_SESSION["usuario"]);
+            $idCategoria = $idCategoria + 1;
             //($con,$idVotacion=NULL,$idUsuario=NULL,$idNominacion=NULL,$idCategoria=NULL,$puntuacion=NULL){
             $votaciones10 = CVotacion::dameVotaciones($con, NULL, $idUsuario, NULL, $idCategoria, 10);
             $votacion10 = new CVotacion();
-            return count($votaciones10);
             if(count($votaciones10)>0){
                 $votacion10 = $votaciones10[0];
             }
@@ -274,7 +275,7 @@ function agregaVotacion(){
             $votacion5->graba($con);
             
             mysqli_close($con);
-            return 'Correctamente votado has tu '.$votacion10->getIdVotacion();
+            return 'Correctamente votado has tu';
         }
           
     }else{
@@ -284,7 +285,7 @@ function agregaVotacion(){
     
 }
 
-function dameNominaciones2(){
+function dameNominaciones(){
     $retorno = '';
 
     session_start();
@@ -319,8 +320,10 @@ function dameNominaciones2(){
         }else
         {
             $idCategoria = CVotacion::dameUltimaCategoriaVotada($con, $_SESSION["usuario"]);
+            $idCategoria = $idCategoria + 1;
+            //return $idCategoria;
        
-            if($idCategoria==24){
+            if($idCategoria==25){
                 $retorno = '<div class="container">
                             <div class="row">
                             <div class="col-xs-1"></div>

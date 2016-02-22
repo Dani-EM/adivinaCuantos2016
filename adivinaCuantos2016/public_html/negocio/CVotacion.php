@@ -151,7 +151,7 @@ class CVotacion {
     }
 
     public static function dameUltimaCategoriaVotada($con, $idUsuario=NULL){
-        $ultimaCategoriaVotada = 1;
+        $ultimaCategoriaVotada = 0;
         if($idUsuario == NULL){
             return $ultimaCategoriaVotada;
         }else{
