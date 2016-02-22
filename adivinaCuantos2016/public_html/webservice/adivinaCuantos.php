@@ -44,14 +44,26 @@ function validaUsuario(){
         
         $usuario = CUsuario::dameUsuario($con,$nickUsuario,$emailUsuario);
         
-        mysqli_close($con);
-        
         if ($usuario->getIdUsuario() > 0) {
             $_SESSION["usuario"]=$usuario->getIdUsuario();
-            return $usuario->getNick();
+            
         }else{
-            return 'LOGIN';
+            $usuario = new CUsuario();
+            $usuario->setNick($nickUsuario);
+            $usuario->setEmail($emailUsuario);
+            $usuario->graba($con);
+            
+            $usuario = CUsuario::dameUsuario($con,$nickUsuario,$emailUsuario);
+        
+            if ($usuario->getIdUsuario() > 0) {
+                $_SESSION["usuario"]=$usuario->getIdUsuario();
+            }
+            
         }
+        
+        mysqli_close($con);
+        
+        return $usuario->getNick();
         
         
     }   
