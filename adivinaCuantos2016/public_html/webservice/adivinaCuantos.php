@@ -145,7 +145,7 @@ function dameNominaciones_old(){
                             <div class="row">
                             <div class="col-xs-2"></div>
                             <div class="col-xs-8 text-center">
-                            <h3><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h3>
+                            <h4><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h4>
                             </div>
                             <div class="col-xs-2">
                             <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
@@ -321,17 +321,25 @@ function dameNominaciones(){
     session_start();
     if($_SESSION["usuario"]==""){
         $retorno = '<div class="container">
-                    <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-1">
-                    </div>
-                    <div class="col-xs-8 text-center">
-                    <h3>Logueate desde el login del menú superior</h3>
-                    </div>
-                    <div class="col-xs-1">
-                    </div>
-                    <div class="col-xs-1"></div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-8 text-center">
+                                <h4>Para empezar a hacer tus votaciones pincha en login. Y si no has leído las normas ahora es buen momento.</h4>
+                            </div>
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-1"></div>
+                        </div>
+                        <div class="extra-space-m"></div>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#usuarios"><span class="fa fa-user"></span>&nbsp;Login</a>
+                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#normas"><span class="fa fa-list-ol"></span>&nbsp;Normas</a>
+                            </div>
+                            <div class="extra-space-xxl"></div>
+                            <div class="devider"></div>
+                            <div class="extra-space-xxl"></div>
+                        </div>
                     </div>';
     }else{
         include("../negocio/CNominacion.php");
@@ -354,20 +362,27 @@ function dameNominaciones(){
             //return $idCategoria;
        
             if($idCategoria==25){
-                $retorno = '<div class="container">
+           $retorno = '<div class="row">
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-8 text-center">
+                                    <p><h3>¡ENHORABUENA!</h3></p>
+                                    <div class="extra-space-m"></div>
+                                    <p><h3>Ya tenemos tus votaciones.</h3></p>
+                                    <p><h3>¡Mucha Suerte!</h3></p>
+                                    <div class="extra-space-m"></div>
+                                    <div class="devider"></div>
+                                </div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-1"></div>
+                            </div>
+                            <div class="extra-space-xxl"></div>
                             <div class="row">
-                            <div class="col-xs-1"></div>
-                            <div class="col-xs-1">
+                            <div class="col-xs-12 text-center">
+                            <a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button"><span class="fa fa-share-alt"></span>&nbsp;&nbsp;Compartir</a>
                             </div>
-                            <div class="col-xs-8 text-center">
-                            <h3>¡¡ENHORABUENA!! Ya tenemos tus votaciones.</h3>
-                            <h3>¡¡¡¡MUCHA SUERTE!!!!</h3>
                             </div>
-                            <div class="col-xs-1">
-                            </div>
-                            <div class="col-xs-1"></div>
-                            </div>
-                            </div>';
+                        </div>';
 
             }else{
                     //dameNominaciones($con,$idNominacion=NULL,$idCategoria=NULL,$idPelicula=NULL,$idProfesional=NULL,$idEdicionEvento=NULL){
@@ -377,10 +392,10 @@ function dameNominaciones(){
                     $retorno.='<div class="container">
                                 <div class="row">
                                 <div class="col-xs-2"></div>
-                                <div class="col-xs-8 text-center">
-                                <h3><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h3>
+                                <div class="col-xs-12 col-sm-8 text-center">
+                                <h4><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h4>
                                 </div>
-                                <div class="col-xs-2">
+                                <div class="col-xs-12 col-sm-2 text-center">
                                 <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
                                 </div>
                                 </div>

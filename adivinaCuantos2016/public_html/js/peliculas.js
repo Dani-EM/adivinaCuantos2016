@@ -3,6 +3,14 @@ $(document).ready(function(){
    inicializaUsuarioLogado();
  });
 
+function alertaPanel(texto){
+    $("#textoAlertaPanel").html('');
+    $("#textoAlertaPanel").html(texto);
+    $('#alertPanel').modal('show');
+    
+}
+
+
 function inicializaUsuarioLogado(){
     try
     { 
@@ -36,9 +44,9 @@ function inicializaNominaciones(){
             data: { "dameNominaciones" :  true , "idSeccion" :  1},
             success: function(data){
                 $("#textoFichas").html(data);
-                    //$('#titulo-seccion-nominados').text('Mejor Película (Best picture)');
-                    $('#lblSeccion').text(1);
-                    $("#imgCargando").addClass("hidden");
+                //$('#titulo-seccion-nominados').text('Mejor Película (Best picture)');
+                $('#lblSeccion').text(1);
+                $("#imgCargando").addClass("hidden");
             }
         });
     } 
@@ -96,8 +104,8 @@ function vota(){
         
         if(contador == 2){
             if(nNominacion10 == nNominacion5){
-                alert("No puedes votar al mismo candidato con 10 y con 5 ptos.");        
-            }else{
+                alertaPanel('<p>Uno como 1ª opción que te haría sumar 10 <span class="fa fa-star"></span>, y otro distinto como 2ª opción que te sumaría 5 <span class="fa fa-star"></span>.</p>');
+             }else{
                 var idSeccion = parseInt($('#lblSeccion').text());
                 try
                 { 
@@ -117,7 +125,7 @@ function vota(){
                 cargaNominaciones();
             }
         }else{
-            alert("Tienes que votar con 10 y 5 puntos.");
+            alertaPanel('<p>No has seleccionado ninguna <span class="fa fa-star"></span>, o sólo una.</p><p>Tienes que pinchar en 10 <span class="fa fa-star"></span> para fijar tu 1ª opción, y en 5 <span class="fa fa-star"></span> para la 2ª opción.</p>');
         }
         
 }
