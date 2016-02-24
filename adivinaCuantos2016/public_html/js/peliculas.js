@@ -1,12 +1,38 @@
 $(document).ready(function(){
    inicializaNominaciones();
    inicializaUsuarioLogado();
- });
+  });
 
 function alertaPanel(texto){
     $("#textoAlertaPanel").html('');
     $("#textoAlertaPanel").html(texto);
     $('#alertPanel').modal('show');
+    
+}
+
+function infoPanel(texto){
+    $("#textoInfoPanel").html('');
+    $("#textoInfoPanel").html(texto);
+    $('#infoPanel').modal('show');
+    
+}
+
+function dameDatosTransferencia(){
+    try
+    { 
+        $.ajax({
+            type: "POST",
+            url: "webservice/adivinaCuantos.php",
+            data: { "dameDatosTransferencia" :  true },
+            success: function(data){
+                infoPanel(data);
+            }
+        });
+    } 
+    catch (err) 
+    {
+      alertaPanel(err);
+    }
     
 }
 
@@ -26,7 +52,7 @@ function inicializaUsuarioLogado(){
     } 
     catch (err) 
     {
-      alert(err);
+      alertaPanel(err);
     }
     
 }
@@ -52,7 +78,7 @@ function inicializaNominaciones(){
     } 
     catch (err) 
     {
-      alert(err);
+      alertaPanel(err);
     }
  }
 
@@ -63,7 +89,7 @@ function cargaNominaciones(){
    
  }
  
- function webserviceNominaciones(){
+function webserviceNominaciones(){
       try
     { 
         $.ajax({
@@ -78,9 +104,9 @@ function cargaNominaciones(){
     } 
     catch (err) 
     {
-      alert(err);
+      alertaPanel(err);
     }
- }
+}
 
 
 function vota(){
@@ -104,7 +130,7 @@ function vota(){
         
         if(contador == 2){
             if(nNominacion10 == nNominacion5){
-                alertaPanel('<p>Uno como 1ª opción que te haría sumar 10 <span class="fa fa-star"></span>, y otro distinto como 2ª opción que te sumaría 5 <span class="fa fa-star"></span>.</p>');
+                alertaPanel('<p><strong>Recuerda:</strong></p><p>Debes votar a dos candidatos distintos.</p><div class="extra-space-m"></div><p>Uno como 1ª opción que te haría sumar 10 <span class="fa fa-star"></span>, y otro distinto como 2ª opción que te sumaría 5 <span class="fa fa-star"></span>.</p>');
              }else{
                 var idSeccion = parseInt($('#lblSeccion').text());
                 try
@@ -120,17 +146,35 @@ function vota(){
                 } 
                 catch (err) 
                 {
-                  alert(err);
+                  alertaPanel(err);
                 }
                 cargaNominaciones();
             }
         }else{
-            alertaPanel('<p>No has seleccionado ninguna <span class="fa fa-star"></span>, o sólo una.</p><p>Tienes que pinchar en 10 <span class="fa fa-star"></span> para fijar tu 1ª opción, y en 5 <span class="fa fa-star"></span> para la 2ª opción.</p>');
+            alertaPanel('<p><strong>Recuerda:</strong></p><p>Debes votar a dos candidatos distintos.</p><div class="extra-space-m"></div><p>No has seleccionado ninguna <span class="fa fa-star"></span>, o sólo una.</p><p>Tienes que pinchar en 10 <span class="fa fa-star"></span> para fijar tu 1ª opción, y en 5 <span class="fa fa-star"></span> para la 2ª opción.</p>');
         }
         
 }
 
 function validarUsuario(){
+    //Validacion de campos
+    var email = $("#inputEmail").val();
+    var nick = $("#inputNick").val();
+    
+    if((email == '')||(nick=='')){
+        alertaPanel('<p>No puedes dejar ningun campo vacío!</p>');
+        return;
+    }
+    
+     // Expresion regular para validar el correo
+    var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+
+    // Se utiliza la funcion test() nativa de JavaScript
+    if (!regex.test($('#inputEmail').val().trim())) {
+        alertaPanel('<p>La dirección de correo introducida no es válida!</p>');
+        return;
+    }
+    
     try
     { 
         $.ajax({
@@ -156,6 +200,6 @@ function validarUsuario(){
     } 
     catch (err) 
     {
-      alert(err);
+      alertaPanel(err);
     }
  }

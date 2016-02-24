@@ -14,7 +14,24 @@ if(isset($_POST['agregaVotacion'])) {
 
 if(isset($_POST['dameUsuarioLogado'])) {
   echo dameUsuarioLogado();
-} 
+}
+
+if(isset($_POST['dameDatosTransferencia'])) {
+  echo dameDatosTransferencia();
+}
+
+function dameDatosTransferencia(){
+   $retorno = '<strong><p>Aquí tienes los números de cuenta:.</p></strong>';
+   $retorno.='<div class="extra-space-m"></div>';
+   $retorno.='<p>Titular: Alberto Izquierdo Fermosel</p>';
+   $retorno.='<p>Dni: 70059741Q</p>';
+   $retorno.='<div class="extra-space-m"></div>';
+   $retorno.='<p>Entidad: ING Bank, N.V., Sucursal en España - C.I.F. W0032177H</p>';
+   $retorno.='<p>IBAN: ES28 1465 0100 93 1702085297</p>';
+   $retorno.='<p>Entidad: Banco Bilbao Vizcaya Argentaria, S.A. - C.I.F. A48265169</p>';
+   $retorno.='<p>IBAN: ES93 0182 0959 90 0201607597</p>';
+   return $retorno;
+}
 
 function validaUsuario(){
     include("../negocio/CUsuario.php");
@@ -68,173 +85,6 @@ function validaUsuario(){
         
     }   
     
-}
-
-function dameNominaciones_old(){
-    $retorno = '';
-
-    session_start();
-    if($_SESSION["usuario"]==""){
-        $retorno = '<div class="container">
-                        <div class="row">
-                            <div class="col-xs-1"></div>
-                            <div class="col-xs-1"></div>
-                            <div class="col-xs-8 text-center">
-                                <h4>Para empezar a hacer tus votaciones pincha en login. Y si no has leído las normas ahora es buen momento.</h4>
-                            </div>
-                            <div class="col-xs-1"></div>
-                            <div class="col-xs-1"></div>
-                        </div>
-                        <div class="extra-space-m"></div>
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#usuarios"><span class="fa fa-user"></span>&nbsp;Login</a>
-                                <a class="btn btn-primary btn-blank btn" target="_blank" role="button" data-toggle="modal" href="#normas"><span class="fa fa-list-ol"></span>&nbsp;Normas</a>
-                            </div>
-                            <div class="extra-space-xxl"></div>
-                            <div class="devider"></div>
-                            <div class="extra-space-xxl"></div>
-                        </div>
-                    </div>';
-    }else{
-        $idCategoria = '0';
-        if(isset($_POST['idSeccion'])) {
-            $idCategoria = $_POST["idSeccion"];
-        } 
-        
-        if($idCategoria==25){
-            $retorno = '<div class="row">
-                                <div class="col-xs-1"></div>
-                                <div class="col-xs-1"></div>
-                                <div class="col-xs-8 text-center">
-                                    <p><h3>¡ENHORABUENA!</h3></p>
-                                    <div class="extra-space-m"></div>
-                                    <p><h3>Ya tenemos tus votaciones.</h3></p>
-                                    <p><h3>¡Mucha Suerte!</h3></p>
-                                    <div class="extra-space-m"></div>
-                                    <div class="devider"></div>
-                                </div>
-                                <div class="col-xs-1"></div>
-                                <div class="col-xs-1"></div>
-                            </div>
-                            <div class="extra-space-xxl"></div>
-                            <a class="btn btn-primary btn-blank btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http://adivinacuantos.com" role="button"><span class="fa fa-share-alt"></span>&nbsp;&nbsp;Compartir</a>
-                        </div>';
-
-        }else{
-
-            include("../negocio/CNominacion.php");
-
-            $host="mysql.hostinger.es";  //mysql.hostinger.es localhost
-            $user="u755245033_admin";  //u755245033_admin root
-            $password="admin1234"; //admin1234
-            $db="u755245033_cine"; //u755245033_cine concurso_cine
-            $con=mysqli_connect($host,$user,$password,$db);
-
-            // Check connection
-            if (mysqli_connect_errno())
-            {
-                return "ERROR EN LA BBDD " . mysqli_connect_error();
-            }else
-            {
-                //dameNominaciones($con,$idNominacion=NULL,$idCategoria=NULL,$idPelicula=NULL,$idProfesional=NULL,$idEdicionEvento=NULL){
-                $nominaciones = CNominacion::dameNominaciones($con, NULL, $idCategoria, NULL, NULL, NULL);
-
-                mysqli_close($con);
-                $retorno.='<div class="container">
-                            <div class="row">
-                            <div class="col-xs-2"></div>
-                            <div class="col-xs-8 text-center">
-                            <h4><label id="titulo-seccion-nominados">'.$nominaciones[0]->getCategoria()->getDescripcion().'</label></h4>
-                            </div>
-                            <div class="col-xs-2">
-                            <a onclick="vota()" id="enlaceNext" class="btn btn-primary btn-blank">Votar</a>
-                            </div>
-                            </div>
-                            </div><div class="container">';
-                foreach($nominaciones as $nominacion){
-                   $retorno.='<div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="offer offer-default negocio">
-                    <div class="row">
-                    <div class="col-xs-8 col-md-8 text-right">
-                    <div>
-                    <div class="extra-space-m"></div>';
-
-                   switch ($nominacion->getCategoria()->getTipoCategoria()) {
-                    case 0: //Peliculas
-                        $retorno.='<h5>'.$nominacion->getPelicula()->getTituloPelicula().'</h5>';
-                        break;
-                    case 1: //Profesionales
-                        $retorno.='<h5>'.$nominacion->getProfesional()->getNombre().'</h5>';
-                        $retorno.='<p><strong>por:</strong>'.$nominacion->getPelicula()->getTituloPelicula().'</p>';
-                        break;
-                   }
-                   $retorno.='<div class="devider"></div>';  
-                   $retorno.='<p style="margin-top: 4px;">
-                                <button type="button" class="btn btn-success">
-                                <input type="radio" id="vota10-'.$nominacion->getIdNominacion().'" name="10">
-                                <label for="vota10-'.$nominacion->getIdNominacion().'">
-                                <span style="color:white;">10&nbsp;</span> 
-                                <span class="fa fa-star"></span></label>
-                                </button>
-                                <button type="button" class="btn btn-success">
-                                <input type="radio" id="vota5-'.$nominacion->getIdNominacion().'" name="5">
-                                <label for="vota5-'.$nominacion->getIdNominacion().'">
-                                <span style="color:white;">5&nbsp;</span> 
-                                <span class="fa fa-star"></span></label>
-                                </button>
-                                </p>
-                                <div class="extra-space-m"></div>
-                                </div>
-                                </div>
-                                <div class="col-xs-4 col-md-4">';
-
-                   switch ($nominacion->getCategoria()->getTipoCategoria()) {
-                    case 0: //Peliculas
-                        $retorno.='<img src="'.$nominacion->getPelicula()->getUrlImg().'" class="img img-responsive" /></div>';
-                        break;
-
-                    case 1: //Profesionales
-                        $retorno.='<img src="'.$nominacion->getProfesional()->getUrlImg().'" class="img img-responsive" /></div>';
-                        break;
-                   }
-
-                   $retorno.='</div></div></div>';
-
-                }
-            }
-            $porcentaje = 4 * $idCategoria;
-            $retorno.='</div><div class="container">
-                        <div class="extra-space-m"></div>';
-
-            if($idCategoria<25){
-            $retorno.='<div class="row bs-wizard" style="border-bottom:0;">
-                        <div class="col-xs-3 bs-wizard-step complete">
-                        <div class="text-center bs-wizard-stepnum"><h6>Las Divertidas!!</h6></div>
-                        </div>
-                        <div class="col-xs-3 bs-wizard-step complete">
-                        <div class="text-center bs-wizard-stepnum"><h6>Menos Populares</h6></div>
-                        </div>
-                        <div class="col-xs-3 bs-wizard-step active">
-                        <div class="text-center bs-wizard-stepnum"><h6>!!!Puro Cinema!!!</h6></div>
-                        </div>        
-                        <div class="col-xs-3 bs-wizard-step">
-                        <div class="text-center bs-wizard-stepnum"><h6>!Y Esto Fue Todo!</h6></div>
-                        </div>        
-                        </div>';
-            }
-            $retorno.='<div class="row bs-wizard" style="border-bottom:0;">
-                        <div class="col-xs-12 bs-wizard-step complete">
-                        <div class="progress" style="left:0; width:100%;"><div class="progress-bar"></div></div>
-                        <div class="bs-wizard-dot" style="left:'.$porcentaje.'%"><img src="img/logo_solo.png" class="img-responsive"/></div>
-                        </div>
-                        </div>
-                        </div>';  
-
-
-        }
-    }
-    return $retorno;
 }
 
 function agregaVotacion(){
@@ -523,7 +373,4 @@ function dameUsuarioLogado(){
         }  
         
     }
-
- 
-    
 }

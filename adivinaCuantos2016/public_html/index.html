@@ -20,11 +20,11 @@
             <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
             <!-- OpenGraph meta-->
-            <meta property="og:url" content="http://adivinacuantos.com"></meta>
-            <meta property="og:type" content="website"></meta>
-            <meta property="og:title" content="Concursa y gana demostrando que eres un Gran Cinéfilo!"></meta>
-            <meta property="og:description" content="Porra entre amigos y compañeros para disfrutar un poquito más del cine"></meta>
-            <meta property="og:image" content="http://adivinacuantos.com/img/metafb.png"></meta>
+            <meta property="og:url" content="http://adivinacuantos.com" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Concursa y gana demostrando que eres un Gran Cinéfilo!" />
+            <meta property="og:description" content="Porra entre amigos y compañeros para disfrutar un poquito más del cine" />
+            <meta property="og:image" content="http://adivinacuantos.com/img/metafb.png" />
 
             <!-- Libs and Plugins CSS -->
             <link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
@@ -92,7 +92,7 @@
                             <li><a data-toggle="modal" href="#normas"><span class="fa fa-list-ol fa-1x"></span>&nbsp;&nbsp;Normas</a></li>
                             <li><a data-toggle="modal" href="#pagos"><span class="fa fa-eur fa-1x"></span>&nbsp;&nbsp;Pagar</a></li>
                             <li><a class="page-scroll" href="#contact-section"><span class="fa fa-film fa-1x"></span>&nbsp;&nbsp;Votar</a></li>
-                            <li><a data-toggle="modal" href="#usuarios"><span class="fa fa-user fa-1x"></span>&nbsp;&nbsp;<label id="spanLogin">Login</label></a></li>
+                            <li><a data-toggle="modal" href="#usuarios"><span class="fa fa-user fa-1x"></span>&nbsp;&nbsp;<span id="spanLogin">Login</span></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -267,7 +267,7 @@
                 <div class="rotate-box-2-wrapper">
                     <div class="container">
                         
-                            <div><img id="comienzos" src="img/cheque-regalo-large.png" alt="cheque-regalo"></div>
+                            <div><img id="chequeRegalo" src="img/cheque-regalo-large.png" alt="cheque-regalo"></div>
                             <div class="extra-space-m"></div>
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
@@ -390,7 +390,7 @@
                                 <div class="page-header text-center fadeInDownBig wow" data-wow-delay="0.4s"> <!--fadeInDown-->
                                         <div class="row text-center">
                                             <div class="col-xs-12 text-white">
-                                                <h4><i><img src="img/logo_redes.png" style="max-height: 38px;"/> </i>&nbsp;&nbsp;&nbsp;Panel de votaciones</h4>
+                                                <h4><i><img src="img/logo_redes.png" style="max-height: 38px;" alt="redes"/> </i>&nbsp;&nbsp;&nbsp;Panel de votaciones</h4>
                                             </div>
                                         </div>
                                 </div>    
@@ -483,7 +483,7 @@
                                 <h4>Agradecimientos</h4>
                                 <div class="single-tweet">
                                     <div class="tweet-content"><span><a href="https://www.themoviedb.org/" target="_blank">TheMovieDB</a></span> Hemos hecho uso de su API para nutrirnos de datos de profesionales y películas, y también obtenemos las miniaturas de sus servidores. Thank You very much!!</div>
-                                    <div class="tweet-date"><a href="https://www.themoviedb.org/" target="_blank"><img src="img/tmdb-logo.png" style="width: 150px;" /></a></div>
+                                    <div class="tweet-date"><a href="https://www.themoviedb.org/" target="_blank"><img src="img/tmdb-logo.png" style="width: 150px;" alt="Tmdb" /></a></div>
                                     <div class="tweet-date">"This product uses the TMDb API but is not endorsed or certified by TMDb"</div>
                                 </div>
                             </div>
@@ -511,7 +511,7 @@
                     <div class="modal-content text-center">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><span class="fa fa-eur"></span> - Formas de pago</h4>
+                            <h4 class="modal-title" id="lblPagosPanel"><span class="fa fa-eur"></span> - Formas de pago</h4>
                         </div>
                         <div class="modal-body">
                             <p>Recuerda:</p>
@@ -539,13 +539,11 @@
                             <span class="fa fa-cc fa-2x"></span>
                             <div class="extra-space-m"></div>
                             <p>Pagos por <strong>Transferencia</strong></p>
-                            <p>Aquí tienes los números de cuenta:.</p>
                             <div class="extra-space-m"></div>
-            <!--                <button type="button" class="btn btn-primary btn-blank" data-dismiss="modal"> Transferencia</button>-->
-                            <p>Entidad: ING Bank, N.V., Sucursal en España - C.I.F. W0032177H</p>
-                            <p>IBAN: ES28 1465 0100 93 1702085297</p>
-                            <p>Entidad: Banco Bilbao Vizcaya Argentaria, S.A. - C.I.F. A48265169</p>
-                            <p>IBAN: ES93 0182 0959 90 0201607597</p>
+                            <div class="signin-help">
+                                <p class="btn btn-primary btn-blank" onclick="dameDatosTransferencia()" style="cursor:pointer;">Solicitar los datos</p>
+                            </div>
+                            <div class="extra-space-m"></div>
                         </div>
 
                     </div>
@@ -557,14 +555,14 @@
                     <div class="modal-content text-center">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><span class="fa fa-list-ol"></span>&nbsp;&nbsp;Normas</h4>
+                            <h4 class="modal-title" id="lblNormasPanel"><span class="fa fa-list-ol"></span>&nbsp;&nbsp;Normas</h4>
                         </div>
                         <div class="modal-body text-left">
-                            <p><h5><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Registro</h5></p>
-                        <p>Para poder manejar tus votaciones necesitamos que crees un usuario. Pincha en <strong><span class="fa fa-user-plus"></span> Login</strong> del menú superior.</p>
+                            <h5><span class="fa fa-user-plus"></span>&nbsp;&nbsp;Registro</h5>
+                            <p>Para poder manejar tus votaciones necesitamos que crees un usuario. Pincha en <strong><span class="fa fa-user-plus"></span> Login</strong> del menú superior.</p>
                             <p>Tienes botón de <strong><span class="fa fa-user-plus"></span> Crear</strong>, para la primera vez que entres, y de <strong><span class="fa fa-key"></span> Entrar</strong>, por sí no hicieras tus votaciones en una sóla sesión. Elige un Nick (que es lo único que será público) e introduce tu correo electrónico para que nos comuniquemos.</p>
                             <div class="extra-space-m"></div>
-                            <p><h5><span class="fa fa-star"></span> <span class="fa fa-star"></span>&nbsp;&nbsp;Votaciones</h5></p>
+                            <h5><span class="fa fa-star"></span> <span class="fa fa-star"></span>&nbsp;&nbsp;Votaciones</h5>
                             <p>Para votar debes ir a la sección <strong>Panel de Votaciones</strong>. Pinchando en <strong><span class="fa fa-film"></span> Votar</strong> vas directamente, y al hacer login también.</p>
                             <div class="extra-space-m"></div>
                             <p>En este panel van apareciendo todas las películas o profesionales nominados en cada categoría del Oscar. Al lado de cada candidato verás dos botones con <span class="fa fa-star"></span>.</p>
@@ -572,10 +570,10 @@
                                 y otro como 2ª opción clicando en <button type="button" class="btn btn-xs btn-success">5 <span class="fa fa-star"></span></button> lo que te daría 5 estrellas. <strong>No</strong> se puede votar al mismo candidato como 1ª y 2ª opción.</p>
                             <p>En caso de empate a puntos o estrellas, las 1ªs opciones, las de 10 <span class="fa fa-star"></span> sumarán como 11. Y si sigue el empate (será chungo), desempataremos haciendo un parcial de las 6ªs categorías, siguiendo el mismo sistema anterior, primero sumando 10 y 5, y si acaso, 11 para las 1ª opciones. Y si siguiera el empate, lo aplicamos a parciales correlativos de 6 categorías.</p>
                             <div class="extra-space-m"></div>
-                            <p><h5><span class="fa fa-list-ul"></span>&nbsp;&nbsp;Puntuaciones</h5></p>
+                            <h5><span class="fa fa-list-ul"></span>&nbsp;&nbsp;Puntuaciones</h5>
                             <p>Al finalizar la ceremonia de entrega de los Oscar's, que se celebra el Domingo, día 28 de febrero de 2.016, iniciaremos el recuento de puntos. Cuando hagas tus votaciones te mandamos un email que las recoje, y en el caso de que resultes ganador recibirás el cheque-regalo <i class="fa fa-gift"></i> en formato electrónico para canjear en amazon.es.</p>
                             <div class="extra-space-m"></div>
-                            <p><h5><span class="fa fa-eur"></span>&nbsp;&nbsp;Pago de la cuota de participación</h5></p>
+                            <h5><span class="fa fa-eur"></span>&nbsp;&nbsp;Pago de la cuota de participación</h5>
                             <p>Este concurso está montado para amigos, compañeros, colegas... y no tiene motivación de generar ingresos. Se
                                 podría decir que "no" tenemos ánimo de lucro. Toda la recaudación del concurso será empleada en el cheque-regalo del ganador. El único gasto
                                 que imputamos a la recaudación son los 15€ que nos cuesta comprar el dominio adivinacuantos.com</p>
@@ -583,7 +581,7 @@
                             <p>La cuota de participación es de 4€. También te dejamos la opción de pagar 6€, de los que nos donarías 2€ para que el año que viene podamos hacer alguna mejora en el concurso.
                                 Ya te imaginarás que automáticamente tendrás un trocito de nuestro <span class="fa fa-heart"></span>.</p>
                             <div class="extra-space-m"></div>
-                            <p>- La manera de hacernos llegar tu cuota puede ser mediante <span class="fa fa-paypal"></span> PayPal o mediante transferencia <span class="fa fa-cc"></span>. Además, si tienes la inmensa suerte de conocernos en persona puedes pagar en efectivo-metálico. Procura llevar suelto ;). Si pinchas en <span class="fa fa-eur"></span> Pagar del menú superior tienes enlaces a paypal.me/adivinacuantos.com y los números de cuenta.</span></p>
+                            <p>- La manera de hacernos llegar tu cuota puede ser mediante <span class="fa fa-paypal"></span> PayPal o mediante transferencia <span class="fa fa-cc"></span>. Además, si tienes la inmensa suerte de conocernos en persona puedes pagar en efectivo-metálico. Procura llevar suelto ;). Si pinchas en <span class="fa fa-eur"></span> Pagar del menú superior tienes enlaces a paypal.me/adivinacuantos.com y los números de cuenta.</p>
                             <div class="extra-space-m"></div>
                             <div class="devider"></div>
                         </div>
@@ -596,11 +594,11 @@
                     <div class="modal-content text-center">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><span class="fa fa-user"></span>&nbsp;&nbsp;Registro de Usuarios</h4>
+                            <h4 class="modal-title" id="lblUsuariosPanel"><span class="fa fa-user"></span>&nbsp;&nbsp;Registro de Usuarios</h4>
                         </div>
                         <div class="modal-body text-left">
                                 <div class="card card-container text-center">
-                                        <img id="logo-img" class="logo-img hidden-xs hidden-sm" src="img/logo_redes.png" />
+                                        <img id="logo-img" class="logo-img hidden-xs hidden-sm" src="img/logo_redes.png" alt="adivinacuantos" />
                                         <div class="form-signin">
                                             <input type="text" id="inputNick" class="form-control" placeholder="Nick o alias" required autofocus>
                                             <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required>
@@ -630,13 +628,9 @@
                     <div class="modal-content text-center">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><span class="fa fa-exclamation-circle"></span>&nbsp;&nbsp;Error</h4>
+                            <h4 class="modal-title" id="lblAlertPanel"><span class="fa fa-exclamation-circle"></span>&nbsp;&nbsp;Error</h4>
                         </div>
                         <div class="modal-body text-center">
-                            <p><strong>Recuerda:</strong></p>
-                            <div class="extra-space-m"></div>
-                            <p>Debes votar a dos candidatos distintos.</p>
-                            <div class="extra-space-m"></div>
                             <div id="textoAlertaPanel">
                             </div>
                             <div class="extra-space-m"></div>
@@ -645,7 +639,24 @@
                     </div>
                 </div>
             </div>
-
+            
+            <div class="modal fade" id="infoPanel" tabindex="-1" role="dialog" aria-labelledby="alertPanel">
+                <div class="modal-dialog modal-xs" role="document">
+                    <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="lblInfoPanel"><span class="fa fa-info-circle"></span>&nbsp;&nbsp;Info</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div id="textoInfoPanel">
+                            </div>
+                            <div class="extra-space-m"></div>
+                            <div class="devider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
         </div><!-- body ends -->
         
         <!-- Plugins JS -->
